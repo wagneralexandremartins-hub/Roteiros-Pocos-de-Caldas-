@@ -995,30 +995,8 @@
           "https://www.instagram.com/"
         ]
       }
-    </script>
-
-    <!-- JS externo da pasta assets -->
-    <script src="assets/js/script.js"></script>
-
-    <!-- JS inline -->
-    <script>
-      // Ano automático no rodapé
-      document.getElementById("ano-atual").textContent = new Date().getFullYear();
-
-      // Cookies
-      function aceitarCookies() {
-        localStorage.setItem("cookies_roteiros_pocos", "aceito");
-        const banner = document.getElementById("cookieBanner");
-        if (banner) banner.style.display = "none";
-      }
-
-      (function () {
-        const aceito = localStorage.getItem("cookies_roteiros_pocos");
-        if (aceito === "aceito") {
-          const banner = document.getElementById("cookieBanner");
-          if (banner) banner.style.display = "none";
-        }
-      })();
-    </script>
+      
+      <script src="assets/js/script.js"></script>
+    
   </body>
 </html>
