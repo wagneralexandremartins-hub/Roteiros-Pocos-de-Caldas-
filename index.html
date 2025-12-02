@@ -19,12 +19,12 @@
     <meta name="robots" content="index,follow" />
 
     <!-- Favicon (opcional) -->
-    <!-- <link rel="icon" type="image/png" href="imagens/favicon.png" /> -->
+    <!-- <link rel="icon" type="image/png" href="assets/img/favicon.png" /> -->
 
     <!-- CSS externo (pasta assets) -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- Estilos inline -->
+    <!-- Estilos inline (mantidos) -->
     <style>
       * {
         margin: 0;
@@ -147,7 +147,7 @@
 
       /* Hero */
       .hero {
-        background: url("imagens/capa-teleferico-pocos.jpg") center/cover no-repeat;
+        background: url("assets/img/capa-teleferico-pocos.jpg") center/cover no-repeat;
         min-height: 65vh;
         display: flex;
         align-items: center;
@@ -527,7 +527,7 @@
         border-radius: 12px;
         font-size: 0.8rem;
         display: flex;
-        gap: 10px;
+       gap: 10px;
         align-items: center;
         justify-content: space-between;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -617,9 +617,7 @@
   <body>
     <header>
       <div class="top-bar">
-        <span>
-          📍 Poços de Caldas – MG
-        </span>
+        <span>📍 Poços de Caldas – MG</span>
         <span>
           ☎ <strong>(35) 3014-0962</strong>
           | WhatsApp:
@@ -705,8 +703,10 @@
             </div>
           </div>
           <div class="sobre-foto">
-            <!-- Trocar pela foto que preferir -->
-            <img src="imagens/guia-com-grupo-cristo.jpg" alt="Guia com grupo no Cristo Redentor em Poços de Caldas" />
+            <img
+              src="assets/img/guia-com-grupo-cristo.jpg"
+              alt="Guia com grupo no Cristo Redentor em Poços de Caldas"
+            />
           </div>
         </div>
       </section>
@@ -722,7 +722,7 @@
           <!-- ROTEIRO 1 -->
           <article class="card-roteiro">
             <img
-              src="imagens/teleferico-vista-cidade.jpg"
+              src="assets/img/teleferico-vista-cidade.jpg"
               alt="Teleférico com vista da cidade de Poços de Caldas"
             />
             <div class="card-corpo">
@@ -748,7 +748,7 @@
           <!-- ROTEIRO 2 -->
           <article class="card-roteiro">
             <img
-              src="imagens/mirante-santa-rita.jpg"
+              src="assets/img/mirante-santa-rita.jpg"
               alt="Mirante de Santa Rita em Poços de Caldas"
             />
             <div class="card-corpo">
@@ -774,7 +774,7 @@
           <!-- ROTEIRO 3 -->
           <article class="card-roteiro">
             <img
-              src="imagens/parque-cristo.jpg"
+              src="assets/img/parque-cristo.jpg"
               alt="Parque do Cristo em Poços de Caldas"
             />
             <div class="card-corpo">
@@ -807,7 +807,6 @@
             <p>
               Verifique a previsão do tempo antes do seu passeio e organize melhor sua visita.
             </p>
-            <!-- Aqui você pode substituir por um widget real do ClimaTempo, Tempo.com, etc. -->
             <div
               style="
                 border-radius: 10px;
@@ -846,19 +845,19 @@
 
         <div class="galeria-grid">
           <div class="galeria-item">
-            <img src="imagens/galeria-teleferico-01.jpg" alt="Teleférico de Poços de Caldas" />
+            <img src="assets/img/galeria-teleferico-01.jpg" alt="Teleférico de Poços de Caldas" />
             <span>Teleférico</span>
           </div>
           <div class="galeria-item">
-            <img src="imagens/galeria-cristo-01.jpg" alt="Cristo Redentor de Poços de Caldas" />
+            <img src="assets/img/galeria-cristo-01.jpg" alt="Cristo Redentor de Poços de Caldas" />
             <span>Cristo Redentor</span>
           </div>
           <div class="galeria-item">
-            <img src="imagens/galeria-mirante-01.jpg" alt="Mirante de Santa Rita" />
+            <img src="assets/img/galeria-mirante-01.jpg" alt="Mirante de Santa Rita" />
             <span>Mirante Santa Rita</span>
           </div>
           <div class="galeria-item">
-            <img src="imagens/galeria-parque-01.jpg" alt="Parque do Cristo em Poços de Caldas" />
+            <img src="assets/img/galeria-parque-01.jpg" alt="Parque do Cristo em Poços de Caldas" />
             <span>Parque do Cristo</span>
           </div>
         </div>
@@ -873,28 +872,21 @@
 
         <div class="contato-grid">
           <div class="contato-dados">
-            <p>
-              <strong>Telefone fixo:</strong> (35) 3014-0962
-            </p>
+            <p><strong>Telefone fixo:</strong> (35) 3014-0962</p>
             <p>
               <strong>WhatsApp:</strong>
               <a href="https://wa.me/5535999999999" target="_blank" rel="noopener noreferrer">
                 (35) 9 9999-9999
               </a>
             </p>
-            <p>
-              <strong>E-mail:</strong> contato@roteirospocosdecaldas.com.br
-            </p>
-            <p>
-              <strong>Atendimento:</strong> todos os dias, conforme agendamento.
-            </p>
+            <p><strong>E-mail:</strong> contato@roteirospocosdecaldas.com.br</p>
+            <p><strong>Atendimento:</strong> todos os dias, conforme agendamento.</p>
             <p style="margin-top: 10px;">
               Atendemos excursões, grupos fechados, agências parceiras e famílias que desejam
               conhecer Poços de Caldas com conforto e tranquilidade.
             </p>
 
             <div class="mapa-box">
-              <!-- Substitua o src abaixo pelo iframe oficial do Google Maps com o endereço desejado -->
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.0000000000005!2d-46.569!3d-21.789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3APo%C3%A7os+de+Caldas!5e0!3m2!1spt-BR!2sbr!4v0000000000000"
                 width="100%"
@@ -980,11 +972,11 @@
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "Roteiros Po\u00e7os de Caldas",
-        "description": "Roteiros tur\u00edsticos, city tour, excurs\u00f5es e passeios guiados em Po\u00e7os de Caldas - MG.",
+        "name": "Roteiros Poços de Caldas",
+        "description": "Roteiros turísticos, city tour, excursões e passeios guiados em Poços de Caldas - MG.",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Po\u00e7os de Caldas",
+          "addressLocality": "Poços de Caldas",
           "addressRegion": "MG",
           "addressCountry": "BR"
         },
@@ -995,8 +987,9 @@
           "https://www.instagram.com/"
         ]
       }
-      
-      <script src="assets/js/script.js"></script>
-    
+    </script>
+
+    <!-- JS externo -->
+    <script src="assets/script.js"></script>
   </body>
 </html>
