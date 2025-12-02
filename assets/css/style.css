@@ -1,1 +1,612 @@
+/* ============================
+   RESET E VARIÁVEIS
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-primaria: #00796b;
+  --cor-secundaria: #004d40;
+  --cor-fundo: #f5f5f5;
+  --cor-clara: #ffffff;
+  --cor-texto: #333333;
+  --cor-destaque: #ffb300;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================
+   HEADER E NAVEGAÇÃO
+============================ */
+header {
+  background: linear-gradient(90deg, var(--cor-secundaria), var(--cor-primaria));
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.top-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.top-bar span {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.top-bar a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.logo span {
+  display: block;
+  line-height: 1.2;
+}
+
+.logo small {
+  font-weight: normal;
+  font-size: 0.8rem;
+}
+
+.logo-icone {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--cor-primaria);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+   HERO SECTION
+============================ */
+.hero {
+  background: url("../imagens/capa-teleferico-pocos.jpg") center/cover no-repeat;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #fff;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.25));
+}
+
+.hero-conteudo {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 15px 60px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  max-width: 550px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1rem;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.hero-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-whats {
+  background: #25d366;
+  color: #fff;
+}
+
+.btn-claro {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--cor-primaria);
+}
+
+.hero-info {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* ============================
+   SEÇÕES GERAIS
+============================ */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 15px;
+}
+
+.section-titulo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-titulo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: var(--cor-secundaria);
+}
+
+.section-titulo p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ============================
+   SOBRE
+============================ */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.sobre-texto p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.sobre-destaques {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.badge-sobre {
+  background: #e0f2f1;
+  color: var(--cor-secundaria);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.sobre-foto {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================
+   ROTEIROS
+============================ */
+.cards-roteiros {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card-roteiro {
+  background: var(--cor-clara);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-roteiro img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-corpo {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.card-corpo h3 {
+  font-size: 1.1rem;
+  color: var(--cor-secundaria);
+}
+
+.tag {
+  font-size: 0.8rem;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #e0f7fa;
+  color: #006064;
+  margin-bottom: 4px;
+}
+
+.card-corpo p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.card-info-linha {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.card-footer {
+  padding: 10px 15px 15px;
+}
+
+.btn-card {
+  width: 100%;
+  text-align: center;
+  border-radius: 999px;
+  padding: 8px 0;
+  border: 1px solid var(--cor-primaria);
+  background: #e0f2f1;
+  color: var(--cor-secundaria);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-card:hover {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+/* ============================
+   CLIMA / INFO RÁPIDA
+============================ */
+.clima-destaques {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.box {
+  background: var(--cor-clara);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--cor-secundaria);
+}
+
+.box p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.lista-simples {
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.lista-simples li {
+  padding: 4px 0;
+}
+
+/* ============================
+   GALERIA
+============================ */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.galeria-item {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.galeria-item span {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+/* ============================
+   CONTATO
+============================ */
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+}
+
+.contato-dados p {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.contato-dados strong {
+  color: var(--cor-secundaria);
+}
+
+.contato-dados a {
+  color: var(--cor-primaria);
+  font-weight: 600;
+}
+
+.contato-form {
+  background: var(--cor-clara);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.contato-form label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.contato-form button {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--cor-secundaria);
+  color: #fff;
+  cursor: pointer;
+}
+
+.contato-form small {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* ============================
+   MAPA
+============================ */
+.mapa-box {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================
+   RODAPÉ
+============================ */
+footer {
+  background: #263238;
+  color: #eceff1;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: #cfd8dc;
+}
+
+/* ============================
+   COOKIES
+============================ */
+.cookie-banner {
+  position: fixed;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background: #212121;
+  color: #f5f5f5;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+.cookie-banner-text {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cookie-peixe {
+  font-size: 1.4rem;
+}
+
+.cookie-banner button {
+  border-radius: 999px;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cookie-aceitar {
+  background: var(--cor-destaque);
+  color: #212121;
+}
+
+.cookie-config {
+  background: transparent;
+  border: 1px solid #bdbdbd;
+  color: #f5f5f5;
+}
+
+/* ============================
+   RESPONSIVO
+============================ */
+@media (max-width: 900px) {
+  .sobre-grid,
+  .cards-roteiros,
+  .clima-destaques,
+  .galeria-grid,
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-roteiros {
+    gap: 15px;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+}
 
