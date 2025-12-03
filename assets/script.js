@@ -4,18 +4,34 @@ if (anoSpan) {
   anoSpan.textContent = new Date().getFullYear();
 }
 
-// Cookies
-function aceitarCookies() {
-  localStorage.setItem("cookies_roteiros_pocos", "aceito");
-  const banner = document.getElementById("cookieBanner");
-  if (banner) banner.style.display = "none";
-}
+// Banner de cookies
+document.addEventListener("DOMContentLoaded", function () {
+  const banner = document.querySelector(".cookie-banner");
+  const botaoAceitar = document.querySelector("[data-cookie-accept]");
+  const botaoConfig = document.querySelector("[data-cookie-config]");
+  const STORAGE_KEY = "cookies_roteiros_pocos";
 
-// Ocultar banner se já aceitou
-(function () {
-  const aceito = localStorage.getItem("cookies_roteiros_pocos");
-  if (aceito === "aceito") {
-    const banner = document.getElementById("cookieBanner");
-    if (banner) banner.style.display = "none";
+  if (!banner) return;
+
+  // Se já aceitou antes, não mostra o banner
+  const jaAceitou = localStorage.getItem(STORAGE_KEY);
+  if (jaAceitou === "aceito") {
+    banner.style.display = "none";
+    return;
   }
-})();
+
+  // Clique em "Aceitar"
+  if (botaoAceitar) {
+    botaoAceitar.addEventListener("click", function () {
+      localStorage.setItem(STORAGE_KEY, "aceito");
+      banner.style.display = "none";
+    });
+  }
+
+  // Clique em "Configurar"
+  if (botaoConfig) {
+    botaoConfig.addEventListener("click", function () {
+      alert("Em breve: painel de configuração de cookies.");
+    });
+  }
+});
