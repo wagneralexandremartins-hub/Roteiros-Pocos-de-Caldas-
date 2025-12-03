@@ -9,22 +9,19 @@
     <!-- SEO básico -->
     <meta
       name="description"
-      content="Roteiros Poços de Caldas – Passeios guiados, city tour, excursões e experiências completas em Poços de Caldas. Teleférico, Cristo Redentor, mirantes, parques e roteiros personalizados para grupos, famílias e terceira idade."
+      content="Roteiros Poços de Caldas – Passeios guiados, city tour, excursões e experiências completas nos principais pontos turísticos da cidade: Teleférico, Cristo Redentor, mirantes, parques, fontes e muito mais."
     />
     <meta
       name="keywords"
-      content="roteiros poços de caldas, turismo poços de caldas, city tour poços, teleférico poços de caldas, cristo redentor poços, mirante santa rita, excursões poços, passeios guiados"
+      content="roteiros poços de caldas, turismo poços de caldas, city tour poços, teleférico poços de caldas, cristo redentor poços, mirante santa rita, excursões poços, viagens em grupo"
     />
     <meta name="author" content="Roteiros Poços de Caldas" />
     <meta name="robots" content="index,follow" />
 
-    <!-- Favicon (opcional) -->
-    <!-- <link rel="icon" type="image/png" href="assets/img/favicon.png" /> -->
-
     <!-- CSS externo -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- Estilos principais (reforço, caso o CSS externo falhe) -->
+    <!-- Estilos complementares -->
     <style>
       * {
         margin: 0;
@@ -359,7 +356,7 @@
         color: #fff;
       }
 
-      /* Clima + Destaques rápidos */
+      /* CLIMA + INFO RÁPIDA */
       .clima-destaques {
         display: grid;
         grid-template-columns: 1.2fr 1fr;
@@ -394,7 +391,23 @@
         padding: 4px 0;
       }
 
-      /* Galeria */
+      .weather-widget {
+        border-radius: 10px;
+        background: #eceff1;
+        padding: 12px;
+        font-size: 0.9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .weather-temp {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--cor-secundaria);
+      }
+
+      /* GALERIA */
       .galeria-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -418,7 +431,7 @@
         font-size: 0.75rem;
       }
 
-      /* Contato */
+      /* CONTATO */
       .contato-grid {
         display: grid;
         grid-template-columns: 1.2fr 1fr;
@@ -479,7 +492,7 @@
         color: #777;
       }
 
-      /* Mapa */
+      /* MAPA */
       .mapa-box {
         margin-top: 20px;
         border-radius: 12px;
@@ -487,7 +500,7 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
-      /* Rodapé */
+      /* RODAPÉ */
       footer {
         background: #263238;
         color: #eceff1;
@@ -515,7 +528,7 @@
         color: #cfd8dc;
       }
 
-      /* Banner de Cookies */
+      /* BANNER DE COOKIES */
       .cookie-banner {
         position: fixed;
         left: 15px;
@@ -564,7 +577,7 @@
         color: #f5f5f5;
       }
 
-      /* Responsivo */
+      /* RESPONSIVO */
       @media (max-width: 900px) {
         .sobre-grid,
         .cards-roteiros,
@@ -614,6 +627,7 @@
       }
     </style>
   </head>
+
   <body>
     <header>
       <div class="top-bar">
@@ -652,8 +666,8 @@
           <div class="hero-badge">Conheça o melhor de Poços de Caldas com guia especializado</div>
           <h1>Teleférico, Cristo Redentor, mirantes e muito mais em roteiros completos.</h1>
           <p>
-            City tour, passeios personalizados e excursões para grupos, famílias e terceira idade,
-            com conforto, segurança e aquele cuidado mineiro.
+            City tour, passeios personalizados e excursões para grupos, famílias e
+            terceira idade, com conforto, segurança e aquele cuidado mineiro.
           </p>
           <div class="hero-botoes">
             <a
@@ -705,7 +719,7 @@
           <div class="sobre-foto">
             <img
               src="assets/img/familia-com-guia-paulo-rogerio-no-relogio-floral.jpg"
-              alt="Guia com grupo de turistas em Poços de Caldas"
+              alt="Grupo de turistas em Poços de Caldas"
             />
           </div>
         </div>
@@ -723,7 +737,7 @@
           <article class="card-roteiro">
             <img
               src="assets/img/estacao-teleferico-pocos-de-caldas.jpg"
-              alt="Teleférico com vista da cidade de Poços de Caldas"
+              alt="Teleférico de Poços de Caldas com vista da cidade"
             />
             <div class="card-corpo">
               <span class="tag">City Tour Clássico</span>
@@ -774,8 +788,8 @@
           <!-- ROTEIRO 3 -->
           <article class="card-roteiro">
             <img
-              src="assets/img/guia-paulo-rogerio-pocos-de-caldas-turistas.jpg"
-              alt="Grupo de turistas em roteiro completo em Poços de Caldas"
+              src="assets/img/parque-do-cristo-mirante-pocos-de-caldas.jpg"
+              alt="Parque do Cristo em Poços de Caldas"
             />
             <div class="card-corpo">
               <span class="tag">Dia Completo</span>
@@ -804,26 +818,18 @@
         <div class="clima-destaques">
           <div class="box">
             <h3>Clima em Poços de Caldas ☁</h3>
-            <p>
-              Verifique a previsão do tempo antes do seu passeio e organize melhor sua visita.
-            </p>
-            <div
-              style="
-                border-radius: 10px;
-                background: #eceff1;
-                padding: 10px;
-                min-height: 120px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.9rem;
-                text-align: center;
-              "
-            >
-              Widget de previsão do tempo<br />
-              (substituir depois pelo código oficial do site de clima)
+            <p>Veja a situação do tempo antes do seu passeio.</p>
+
+            <!-- Widget de clima em tempo real (Open-Meteo) -->
+            <div id="weather-box" class="weather-widget">
+              <p>Carregando previsão...</p>
             </div>
+
+            <small style="font-size: 0.75rem; color: #777;">
+              Dados meteorológicos fornecidos por Open-Meteo.com
+            </small>
           </div>
+
           <div class="box">
             <h3>Informações rápidas</h3>
             <ul class="lista-simples">
@@ -845,32 +851,23 @@
 
         <div class="galeria-grid">
           <div class="galeria-item">
-            <img
-              src="assets/img/estacao-teleferico-pocos-de-caldas.jpg"
-              alt="Teleférico de Poços de Caldas"
-            />
-            <span>Teleférico</span>
+            <img src="assets/img/carrossel-pocos-1.jpg" alt="Vista aérea de Poços de Caldas" />
+            <span>Vista aérea</span>
+          </div>
+          <div class="galeria-item">
+            <img src="assets/img/carrossel-pocos-2.jpg" alt="Cristo Redentor em Poços de Caldas" />
+            <span>Cristo Redentor</span>
+          </div>
+          <div class="galeria-item">
+            <img src="assets/img/carrossel-pocos-3.jpg" alt="Mirantes em Poços de Caldas" />
+            <span>Mirantes</span>
           </div>
           <div class="galeria-item">
             <img
-              src="assets/img/parque-do-cristo-mirante-pocos-de-caldas.jpg"
-              alt="Parque do Cristo em Poços de Caldas"
+              src="assets/img/cascata-veu-das-noivas-com-turistas.jpg"
+              alt="Cascata Véu das Noivas em Poços de Caldas"
             />
-            <span>Parque do Cristo</span>
-          </div>
-          <div class="galeria-item">
-            <img
-              src="assets/img/mirante-santa-rita-panoramica.jpg"
-              alt="Mirante de Santa Rita em Poços de Caldas"
-            />
-            <span>Mirante Santa Rita</span>
-          </div>
-          <div class="galeria-item">
-            <img
-              src="assets/img/fonte-dos-amores-pocos-de-caldas-1.jpg"
-              alt="Fonte dos Amores em Poços de Caldas"
-            />
-            <span>Fonte dos Amores</span>
+            <span>Cascata Véu das Noivas</span>
           </div>
         </div>
       </section>
@@ -905,9 +902,9 @@
             </p>
 
             <div class="mapa-box">
-              <!-- Substitua o src abaixo pelo iframe oficial do Google Maps com o endereço desejado -->
+              <!-- Google Maps apontando para Poços de Caldas (coordenadas aproximadas) -->
               <iframe
-                src="https://www.google.com/maps/embed?pb="
+                src="https://www.google.com/maps?q=-21.7866,-46.5616&z=13&output=embed"
                 width="100%"
                 height="230"
                 style="border: 0;"
@@ -927,7 +924,12 @@
               <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" />
 
               <label for="telefone">Telefone / WhatsApp</label>
-              <input type="text" id="telefone" name="telefone" placeholder="(DDD) 9 9999-9999" />
+              <input
+                type="text"
+                id="telefone"
+                name="telefone"
+                placeholder="(35) 9 8895-1441"
+              />
 
               <label for="mensagem">Mensagem</label>
               <textarea
@@ -1008,7 +1010,70 @@
       }
     </script>
 
-    <!-- JS externo -->
-    <script src="assets/script.js"></script>
+    <!-- JS externo com ano automático e cookies -->
+    <script src="assets/js/script.js"></script>
+
+    <!-- Widget de clima usando Open-Meteo -->
+    <script>
+      (function () {
+        const box = document.getElementById("weather-box");
+        if (!box) return;
+
+        const lat = -21.7866;
+        const lon = -46.5616;
+
+        const descricaoPorCodigo = function (code) {
+          const map = {
+            0: "Céu limpo",
+            1: "Parcialmente nublado",
+            2: "Parcialmente nublado",
+            3: "Nublado",
+            45: "Nevoeiro",
+            48: "Nevoeiro com gelo",
+            51: "Garoa fraca",
+            53: "Garoa moderada",
+            55: "Garoa intensa",
+            61: "Chuva fraca",
+            63: "Chuva moderada",
+            65: "Chuva forte",
+            71: "Neve fraca",
+            73: "Neve moderada",
+            75: "Neve forte",
+            80: "Pancadas de chuva fracas",
+            81: "Pancadas de chuva moderadas",
+            82: "Pancadas de chuva fortes"
+          };
+          return map[code] || "Condição variável";
+        };
+
+        fetch(
+          "https://api.open-meteo.com/v1/forecast?latitude=" +
+            lat +
+            "&longitude=" +
+            lon +
+            "&current_weather=true&timezone=auto"
+        )
+          .then((resp) => resp.json())
+          .then((data) => {
+            if (!data.current_weather) {
+              box.innerHTML = "<p>Não foi possível carregar o clima agora.</p>";
+              return;
+            }
+
+            const c = data.current_weather;
+            const desc = descricaoPorCodigo(c.weathercode);
+
+            box.innerHTML = `
+              <div class="weather-temp">${c.temperature.toFixed(1)}°C</div>
+              <div>${desc}</div>
+              <div>Vento: ${c.windspeed.toFixed(1)} km/h</div>
+              <div>Atualizado às ${String(c.time).slice(11, 16)}</div>
+            `;
+          })
+          .catch(() => {
+            box.innerHTML = "<p>Não foi possível carregar o clima agora.</p>";
+          });
+      })();
+    </script>
   </body>
 </html>
