@@ -18,7 +18,7 @@
     <meta name="author" content="Roteiros Poços de Caldas" />
     <meta name="robots" content="index,follow" />
 
-    <!-- CSS externo (seu arquivo) -->
+    <!-- CSS externo (se existir) -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- Estilos complementares -->
@@ -944,10 +944,11 @@
               ></textarea>
 
               <button type="submit">
-                Enviar mensagem
+                Enviar via WhatsApp
               </button>
               <small>
-                *Suas informações serão enviadas para nossa equipe de suporte.
+                *Ao clicar em enviar, você será direcionado para o WhatsApp da agência com sua
+                mensagem preenchida.
               </small>
             </form>
           </div>
@@ -995,11 +996,11 @@
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "Roteiros Po\u00e7os de Caldas",
-        "description": "Roteiros tur\u00edsticos, city tour, excurs\u00f5es e passeios guiados em Po\u00e7os de Caldas - MG.",
+        "name": "Roteiros Poços de Caldas",
+        "description": "Roteiros turísticos, city tour, excursões e passeios guiados em Poços de Caldas - MG.",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Po\u00e7os de Caldas",
+          "addressLocality": "Poços de Caldas",
           "addressRegion": "MG",
           "addressCountry": "BR"
         },
@@ -1012,7 +1013,7 @@
       }
     </script>
 
-    <!-- JS do site (ano, cookies, formulário) -->
+    <!-- JS do site (ano, cookies, formulário -> WhatsApp) -->
     <script>
       // Ano automático no rodapé
       document.getElementById("ano-atual").textContent = new Date().getFullYear();
@@ -1042,37 +1043,38 @@
         }
       })();
 
-      // Envio do formulário (via Google Apps Script)
+      // Formulário enviando APENAS para WhatsApp
       (function () {
         const form = document.getElementById("form-contato");
         if (!form) return;
 
-        // QUANDO CRIAR O WEB APP, TROCAR ESTA URL:
-        const SCRIPT_URL = "URL_DO_SEU_WEB_APP_AQUI";
-
         form.addEventListener("submit", function (e) {
           e.preventDefault();
 
-          if (!SCRIPT_URL || SCRIPT_URL === "URL_DO_SEU_WEB_APP_AQUI") {
-            alert(
-              window.location.hostname +
-                " diz\n\nFormulário ainda não está configurado com o servidor de envio."
-            );
-            return;
-          }
+          const nome = document.getElementById("nome").value.trim() || "Visitante";
+          const email = document.getElementById("email").value.trim() || "Não informado";
+          const telefone = document.getElementById("telefone").value.trim() || "Não informado";
+          const mensagem = document.getElementById("mensagem").value.trim() || "Sem mensagem.";
 
-          fetch(SCRIPT_URL, {
-            method: "POST",
-            body: new FormData(form)
-          })
-            .then(function (resp) {
-              if (!resp.ok) throw new Error("Erro HTTP");
-              alert("Mensagem enviada com sucesso! Em breve entraremos em contato.");
-              form.reset();
-            })
-            .catch(function () {
-              alert("Não foi possível enviar sua mensagem agora. Tente novamente mais tarde.");
-            });
+          const texto =
+            "Olá, gostaria de informações sobre os roteiros em Poços de Caldas.%0A%0A" +
+            "Nome: " +
+            nome +
+            "%0A" +
+            "E-mail: " +
+            email +
+            "%0A" +
+            "Telefone/WhatsApp: " +
+            telefone +
+            "%0A%0A" +
+            "Mensagem:%0A" +
+            mensagem;
+
+          const url = "https://wa.me/5535988951441?text=" + encodeURIComponent(
+            texto.replace(/%0A/g, "\n")
+          );
+
+          window.open(url, "_blank");
         });
       })();
     </script>
