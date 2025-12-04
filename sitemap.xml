@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <url>
-        <loc>https://roteirospocosdecaldas.com.br/</loc>
-        <lastmod>2025-12-04</lastmod> 
-        <changefreq>weekly</changefreq> 
-        <priority>1.00</priority>
-    </url>
+  <url>
+    <loc>https://roteirospocosdecaldas.com.br/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://roteirospocosdecaldas.com.br/#sobre</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://roteirospocosdecaldas.com.br/#roteiros</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://roteirospocosdecaldas.com.br/#galeria</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://roteirospocosdecaldas.com.br/#contato</loc>
+    <priority>0.85</priority>
+  </url>
 
 </urlset>
