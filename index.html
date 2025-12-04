@@ -9,21 +9,21 @@
     <!-- SEO básico -->
     <meta
       name="description"
-      content="Roteiros Poços de Caldas – Passeios guiados, city tour, excursões e experiências completas nos principais pontos turísticos da cidade: Teleférico, Cristo Redentor, mirantes, parques, fontes e muito mais."
+      content="Roteiros Poços de Caldas – City tour, passeios guiados, excursões e experiências completas nos principais pontos turísticos da cidade: Teleférico, Cristo Redentor, mirantes, parques, fontes e muito mais."
     />
     <meta
       name="keywords"
-      content="roteiros poços de caldas, turismo poços de caldas, city tour poços, teleférico poços de caldas, cristo redentor poços, mirante santa rita, excursões poços, viagens em grupo"
+      content="roteiros poços de caldas, turismo poços de caldas, city tour poços, teleférico poços de caldas, cristo redentor poços, mirantes, excursões em grupo, terceira idade"
     />
     <meta name="author" content="Roteiros Poços de Caldas" />
     <meta name="robots" content="index,follow" />
 
-    <!-- CSS externo -->
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
-    <!-- HEADER -->
+    <!-- CABEÇALHO -->
     <header>
       <div class="top-bar">
         <span>📍 Poços de Caldas – MG</span>
@@ -35,52 +35,50 @@
           </a>
         </span>
       </div>
+
       <div class="nav-bar">
-        <nav>
-          <div class="logo">
+        <nav class="nav">
+          <a href="#topo" class="logo">
             <div class="logo-icone">PC</div>
             <span>
               Roteiros Poços de Caldas<br />
               <small>Turismo, City Tour &amp; Experiências</small>
             </span>
-          </div>
+          </a>
+
           <div class="nav-links">
-            <a href="#sobre" class="nav-links a">Sobre</a>
-            <a href="#roteiros" class="nav-links a">Roteiros</a>
-            <a href="#galeria" class="nav-links a">Galeria</a>
-            <a href="#contato" class="nav-links a">Contato</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#roteiros">Roteiros</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#contato">Contato</a>
           </div>
         </nav>
       </div>
     </header>
 
-    <main>
-      <!-- HERO EM CARROSSEL -->
-      <!-- As imagens precisam existir em assets/img/ com esses nomes -->
-      <!-- vista-area-praca-pedro-sanches-1.jpg e vista-area-praca-pedro-sanches-2.jpg -->
+    <main id="topo">
+      <!-- HERO / CARROSSEL -->
       <section class="hero-carousel">
-        <div class="carousel-container">
-          <div class="carousel-slide fade">
-            <img
-              src="assets/img/vista-area-praca-pedro-sanches-1.jpg"
-              alt="Vista aérea da Praça Pedro Sanches em Poços de Caldas durante o dia"
-            />
-          </div>
-
-          <div class="carousel-slide fade">
-            <img
-              src="assets/img/vista-area-praca-pedro-sanches-2.jpg"
-              alt="Vista aérea da Praça Pedro Sanches em Poços de Caldas à noite"
-            />
-          </div>
+        <div class="carousel-slide">
+          <img
+            src="assets/img/praca-pedro-sanches-dia.jpg"
+            alt="Vista aérea da Praça Pedro Sanches em Poços de Caldas durante o dia"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="assets/img/praca-pedro-sanches-noite.jpg"
+            alt="Vista aérea da Praça Pedro Sanches em Poços de Caldas à noite"
+          />
         </div>
 
-        <div class="carousel-content">
+        <div class="hero-overlay">
           <div class="hero-badge">
             Conheça o melhor de Poços de Caldas com guia especializado
           </div>
           <h1>
-            Teleférico, Cristo Redentor, mirantes e muito mais em roteiros completos.
+            Teleférico, Cristo Redentor, mirantes e muito mais em roteiros
+            completos.
           </h1>
           <p>
             City tour, passeios personalizados e excursões para grupos, famílias e
@@ -136,14 +134,14 @@
           <div class="sobre-foto">
             <img
               src="assets/img/familia-com-guia-paulo-rogerio-no-relogio-floral.jpg"
-              alt="Grupo de turistas com guia em Poços de Caldas"
+              alt="Família com guia em ponto turístico de Poços de Caldas"
             />
           </div>
         </div>
       </section>
 
       <!-- ROTEIROS -->
-      <section id="roteiros" class="section" style="background: #e0f2f1;">
+      <section id="roteiros" class="section section-roteiros">
         <div class="section-titulo">
           <h2>Roteiros em Destaque</h2>
           <p>Escolha o roteiro ideal para o seu grupo e solicite um orçamento sem compromisso.</p>
@@ -237,12 +235,11 @@
             <h3>Clima em Poços de Caldas ☁</h3>
             <p>Veja a situação do tempo antes do seu passeio.</p>
 
-            <!-- Widget de clima em tempo real (Open-Meteo) -->
             <div id="weather-box" class="weather-widget">
               <p>Carregando previsão...</p>
             </div>
 
-            <small style="font-size: 0.75rem; color: #777;">
+            <small class="weather-credit">
               Dados meteorológicos fornecidos por Open-Meteo.com
             </small>
           </div>
@@ -260,7 +257,7 @@
       </section>
 
       <!-- GALERIA -->
-      <section id="galeria" class="section" style="background: #fafafa;">
+      <section id="galeria" class="section section-galeria">
         <div class="section-titulo">
           <h2>Galeria de Imagens</h2>
           <p>Alguns dos cenários que você vai conhecer nos roteiros em Poços de Caldas.</p>
@@ -285,6 +282,34 @@
               alt="Cascata Véu das Noivas em Poços de Caldas"
             />
             <span>Cascata Véu das Noivas</span>
+          </div>
+          <div class="galeria-item">
+            <img
+              src="assets/img/teleferico-pocos-de-caldas-vista-area.jpg"
+              alt="Teleférico de Poços de Caldas"
+            />
+            <span>Teleférico</span>
+          </div>
+          <div class="galeria-item">
+            <img
+              src="assets/img/relógio-floral-1.jpg"
+              alt="Relógio floral em Poços de Caldas"
+            />
+            <span>Relógio floral</span>
+          </div>
+          <div class="galeria-item">
+            <img
+              src="assets/img/zoo-das-aves-pocos-de-caldas-banner.jpg"
+              alt="Zoológico das Aves em Poços de Caldas"
+            />
+            <span>Zoo das Aves</span>
+          </div>
+          <div class="galeria-item">
+            <img
+              src="assets/img/familia-com-guia-paulo-rogerio-no-relogio-floral.jpg"
+              alt="Turistas em Poços de Caldas"
+            />
+            <span>Momentos especiais</span>
           </div>
         </div>
       </section>
@@ -332,10 +357,15 @@
           </div>
 
           <div class="contato-form">
-            <!-- Formulário visível, mas envio real ainda não configurado em servidor -->
             <form id="form-contato">
               <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Seu nome completo"
+                required
+              />
 
               <label for="email">E-mail</label>
               <input
@@ -396,12 +426,10 @@
     <!-- Banner de Cookies -->
     <div class="cookie-banner">
       <div class="cookie-banner-text">
-        <span>
-          Usamos cookies para melhorar sua experiência nos roteiros de Poços de Caldas.
-          Ao continuar navegando, você concorda com nossa política de cookies.
-        </span>
+        Usamos cookies para melhorar sua experiência nos roteiros de Poços de Caldas.
+        Ao continuar navegando, você concorda com nossa política de cookies.
       </div>
-      <div>
+      <div class="cookie-banner-actions">
         <button class="cookie-config" data-cookie-config>
           Configurar
         </button>
@@ -416,11 +444,11 @@
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "Roteiros Po\u00e7os de Caldas",
-        "description": "Roteiros tur\u00edsticos, city tour, excurs\u00f5es e passeios guiados em Po\u00e7os de Caldas - MG.",
+        "name": "Roteiros Poços de Caldas",
+        "description": "Roteiros turísticos, city tour, excursões e passeios guiados em Poços de Caldas - MG.",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Po\u00e7os de Caldas",
+          "addressLocality": "Poços de Caldas",
           "addressRegion": "MG",
           "addressCountry": "BR"
         },
@@ -433,66 +461,24 @@
       }
     </script>
 
-    <!-- JS do site (ano, cookies, carrossel, clima) -->
+    <!-- JS do site -->
     <script>
       // Ano automático no rodapé
       document.getElementById("ano-atual").textContent = new Date().getFullYear();
 
-      // Banner de cookies
+      // CARROSSEL HERO (fundo)
       (function () {
-        const banner = document.querySelector(".cookie-banner");
-        const btnAceitar = document.querySelector("[data-cookie-accept]");
-        const btnConfig = document.querySelector("[data-cookie-config]");
-
-        if (!banner || !btnAceitar) return;
-
-        if (localStorage.getItem("cookies-aceitos") === "sim") {
-          banner.style.display = "none";
-        }
-
-        btnAceitar.addEventListener("click", function () {
-          localStorage.setItem("cookies-aceitos", "sim");
-          banner.style.display = "none";
-        });
-
-        if (btnConfig) {
-          btnConfig.addEventListener("click", function () {
-            alert("Em breve: painel de configuração de cookies.");
-          });
-        }
-      })();
-
-      // FORMULÁRIO (apenas mensagem de aviso por enquanto)
-      (function () {
-        const form = document.getElementById("form-contato");
-        if (!form) return;
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          alert(
-            "Formulário enviado localmente. Em breve configuraremos o servidor de envio definitivo. Enquanto isso, use o WhatsApp para garantir seu atendimento mais rápido. 😊"
-          );
-          form.reset();
-        });
-      })();
-
-      // CARROSSEL DO HERO
-      (function () {
-        let index = 0;
         const slides = document.getElementsByClassName("carousel-slide");
+        if (!slides.length) return;
+
+        let index = 0;
 
         function showSlides() {
-          if (!slides.length) return;
-
           for (let i = 0; i < slides.length; i++) {
             slides[i].style.opacity = 0;
           }
-
           index++;
-          if (index > slides.length) {
-            index = 1;
-          }
-
+          if (index > slides.length) index = 1;
           slides[index - 1].style.opacity = 1;
           setTimeout(showSlides, 6000); // troca a cada 6s
         }
@@ -500,7 +486,7 @@
         showSlides();
       })();
 
-      // WIDGET DE CLIMA (Open-Meteo)
+      // WIDGET DE CLIMA - Open-Meteo
       (function () {
         const box = document.getElementById("weather-box");
         if (!box) return;
@@ -522,9 +508,6 @@
             61: "Chuva fraca",
             63: "Chuva moderada",
             65: "Chuva forte",
-            71: "Neve fraca",
-            73: "Neve moderada",
-            75: "Neve forte",
             80: "Pancadas de chuva fracas",
             81: "Pancadas de chuva moderadas",
             82: "Pancadas de chuva fortes"
@@ -559,6 +542,45 @@
           .catch(() => {
             box.innerHTML = "<p>Não foi possível carregar o clima agora.</p>";
           });
+      })();
+
+      // FORMULÁRIO DE CONTATO (simples)
+      (function () {
+        const form = document.getElementById("form-contato");
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Mensagem enviada com sucesso! Em breve entraremos em contato pelo WhatsApp ou e-mail informado."
+          );
+          form.reset();
+        });
+      })();
+
+      // Banner de COOKIES
+      (function () {
+        const banner = document.querySelector(".cookie-banner");
+        const btnAceitar = document.querySelector("[data-cookie-accept]");
+        const btnConfig = document.querySelector("[data-cookie-config]");
+
+        if (!banner || !btnAceitar) return;
+
+        // Se já aceitou, some com o banner
+        if (localStorage.getItem("cookies-aceitos") === "sim") {
+          banner.style.display = "none";
+        }
+
+        btnAceitar.addEventListener("click", function () {
+          localStorage.setItem("cookies-aceitos", "sim");
+          banner.style.display = "none";
+        });
+
+        if (btnConfig) {
+          btnConfig.addEventListener("click", function () {
+            alert("Em breve: painel de configuração de cookies.");
+          });
+        }
       })();
     </script>
   </body>
