@@ -1,6 +1,4 @@
-/* ============================
-   RESET E VARIÁVEIS
-============================ */
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
@@ -32,9 +30,8 @@ img {
   display: block;
 }
 
-/* ============================
-   HEADER E NAVEGAÇÃO
-============================ */
+/* CABEÇALHO */
+
 header {
   background: linear-gradient(90deg, var(--cor-secundaria), var(--cor-primaria));
   color: #fff;
@@ -46,17 +43,11 @@ header {
 .top-bar {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 15px;
+  padding: 8px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
-}
-
-.top-bar span {
-  display: flex;
-  gap: 10px;
-  align-items: center;
 }
 
 .top-bar a {
@@ -68,10 +59,10 @@ header {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-nav {
+.nav {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 15px;
+  padding: 8px 15px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,10 +74,10 @@ nav {
   gap: 10px;
   font-weight: bold;
   font-size: 1.1rem;
+  color: #fff;
 }
 
 .logo span {
-  display: block;
   line-height: 1.2;
 }
 
@@ -123,30 +114,49 @@ nav {
   text-decoration: underline;
 }
 
-/* ============================
-   HERO SECTION
-============================ */
-.hero {
-  background: url("../imagens/capa-teleferico-pocos.jpg") center/cover no-repeat;
+/* HERO / CARROSSEL */
+
+.hero-carousel {
+  position: relative;
   min-height: 65vh;
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: flex-start;
   color: #fff;
+  overflow: hidden;
 }
 
-.hero::before {
+.hero-carousel::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.25));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.25)
+  );
+  z-index: 1;
 }
 
-.hero-conteudo {
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
   position: relative;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 15px 60px;
+  padding: 40px 15px 70px;
 }
 
 .hero-badge {
@@ -158,15 +168,15 @@ nav {
   margin-bottom: 10px;
 }
 
-.hero h1 {
+.hero-carousel h1 {
   font-size: 2.4rem;
   max-width: 550px;
   margin-bottom: 15px;
 }
 
-.hero p {
+.hero-carousel p {
   font-size: 1rem;
-  max-width: 500px;
+  max-width: 520px;
   margin-bottom: 20px;
 }
 
@@ -202,9 +212,8 @@ nav {
   opacity: 0.9;
 }
 
-/* ============================
-   SEÇÕES GERAIS
-============================ */
+/* SEÇÕES GENÉRICAS */
+
 .section {
   max-width: 1200px;
   margin: 0 auto;
@@ -227,9 +236,8 @@ nav {
   color: #555;
 }
 
-/* ============================
-   SOBRE
-============================ */
+/* SOBRE */
+
 .sobre-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -264,9 +272,13 @@ nav {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* ============================
-   ROTEIROS
-============================ */
+/* ROTEIROS / CARDS */
+
+.section-roteiros {
+  background: #e0f2f1;
+  border-radius: 30px 30px 0 0;
+}
+
 .cards-roteiros {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -342,9 +354,8 @@ nav {
   color: #fff;
 }
 
-/* ============================
-   CLIMA / INFO RÁPIDA
-============================ */
+/* CLIMA + INFO */
+
 .clima-destaques {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -379,9 +390,34 @@ nav {
   padding: 4px 0;
 }
 
-/* ============================
-   GALERIA
-============================ */
+.weather-widget {
+  border-radius: 10px;
+  background: #eceff1;
+  padding: 12px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.weather-temp {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cor-secundaria);
+}
+
+.weather-credit {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* GALERIA */
+
+.section-galeria {
+  background: #fafafa;
+  border-radius: 30px 30px 0 0;
+}
+
 .galeria-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -392,6 +428,13 @@ nav {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+}
+
+.galeria-item img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
 .galeria-item span {
@@ -405,9 +448,12 @@ nav {
   font-size: 0.75rem;
 }
 
-/* ============================
-   CONTATO
-============================ */
+.galeria-item:hover img {
+  transform: scale(1.05);
+}
+
+/* CONTATO */
+
 .contato-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -463,14 +509,15 @@ nav {
   cursor: pointer;
 }
 
+.contato-form button:hover {
+  background: var(--cor-primaria);
+}
+
 .contato-form small {
   font-size: 0.75rem;
   color: #777;
 }
 
-/* ============================
-   MAPA
-============================ */
 .mapa-box {
   margin-top: 20px;
   border-radius: 12px;
@@ -478,9 +525,8 @@ nav {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ============================
-   RODAPÉ
-============================ */
+/* RODAPÉ */
+
 footer {
   background: #263238;
   color: #eceff1;
@@ -490,7 +536,7 @@ footer {
 .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 15px;
+  padding: 15px 15px;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
@@ -508,9 +554,8 @@ footer {
   color: #cfd8dc;
 }
 
-/* ============================
-   COOKIES
-============================ */
+/* BANNER DE COOKIES */
+
 .cookie-banner {
   position: fixed;
   left: 15px;
@@ -529,14 +574,9 @@ footer {
   z-index: 9999;
 }
 
-.cookie-banner-text {
+.cookie-banner-actions {
   display: flex;
   gap: 8px;
-  align-items: center;
-}
-
-.cookie-peixe {
-  font-size: 1.4rem;
 }
 
 .cookie-banner button {
@@ -559,9 +599,8 @@ footer {
   color: #f5f5f5;
 }
 
-/* ============================
-   RESPONSIVO
-============================ */
+/* RESPONSIVO */
+
 @media (max-width: 900px) {
   .sobre-grid,
   .cards-roteiros,
@@ -579,7 +618,7 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  nav {
+  .nav {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -589,7 +628,7 @@ footer {
     flex-wrap: wrap;
   }
 
-  .hero h1 {
+  .hero-carousel h1 {
     font-size: 1.9rem;
   }
 }
@@ -601,12 +640,16 @@ footer {
     gap: 4px;
   }
 
-  .hero {
+  .hero-carousel {
     min-height: 60vh;
   }
 
-  .hero p {
+  .hero-carousel p {
     font-size: 0.9rem;
   }
-}
 
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
