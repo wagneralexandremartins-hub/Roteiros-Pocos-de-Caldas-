@@ -712,14 +712,17 @@ footer {
     gap: 20px;
   }
 }
+.qr-whatsapp {
+  position: fixed;
+  bottom: 80px;   /* Subiu o QR */
+  right: 20px;
+  z-index: 9999;
+}
+
 .qr-whatsapp img {
-  width: 50px;   /* tamanho pequeno e discreto */
-  height: 50px;  /* mantém proporção */
-  opacity: 0.9;  /* leve suavização opcional */
-}
-
-}
-
+  width: 50px;
+  height: 50px;
+  opacity: 0.9;
 }
 
 .qr-whatsapp img {
