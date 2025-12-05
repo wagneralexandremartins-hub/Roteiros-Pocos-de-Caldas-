@@ -725,14 +725,6 @@ footer {
   opacity: 0.9;
 }
 
-.qr-whatsapp img {
-  width: 100px;       /* pode aumentar ou diminuir */
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: transform 0.2s;
-}
-
 .qr-whatsapp:hover img {
   transform: scale(1.08);
 }
