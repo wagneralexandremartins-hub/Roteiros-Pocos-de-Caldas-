@@ -653,3 +653,62 @@ footer {
     align-items: flex-start;
   }
 }
+/* Melhora visualização no mobile */
+@media (max-width: 768px) {
+
+  /* Reduz faixa verde superior */
+  .header-top {
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+
+  /* Títulos mais compactos */
+  h2.section-titulo {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  /* Ajuste nos cards */
+  .card-roteiro {
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .card-roteiro img {
+    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  /* Tag (City Tour / Mirantes) menor */
+  .tag {
+    font-size: 13px;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+  }
+
+  /* Título do card menor */
+  .card-roteiro h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  /* Texto interno mais leve */
+  .card-corpo p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Botão ajustado */
+  .btn-outline {
+    font-size: 15px;
+    padding: 8px 14px;
+    border-radius: 10px;
+  }
+
+  /* Espaço total entre elementos */
+  .cards-roteiros {
+    gap: 20px;
+  }
+}
