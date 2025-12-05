@@ -712,3 +712,22 @@ footer {
     gap: 20px;
   }
 }
+/* QR Code fixo do WhatsApp */
+.qr-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.qr-whatsapp img {
+  width: 100px;       /* pode aumentar ou diminuir */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.2s;
+}
+
+.qr-whatsapp:hover img {
+  transform: scale(1.08);
+}
