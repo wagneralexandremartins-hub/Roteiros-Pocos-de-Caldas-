@@ -489,4 +489,30 @@ body > footer {
     justify-content: flex-start;
     padding-inline: 0.75rem;
   }
+   /* ==============================
+   AJUSTE PARA REDUZIR O TAMANHO DAS IMAGENS
+   ============================== */
+
+/* Limita a largura máxima das imagens */
+img {
+  width: 100%;
+  max-width: 420px;   /* ajuste principal – diminui as imagens */
+  height: auto;
+  margin: 0 auto;     /* centraliza */
+  display: block;
 }
+
+/* Deixa a galeria mais compacta */
+.galeria-grid,
+.grade-galeria {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  gap: 1rem !important;
+}
+
+/* Para mobile manter bom tamanho */
+@media (max-width: 600px) {
+  img {
+    max-width: 100%;
+  }
+}
+
