@@ -1,398 +1,101 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site em Manutenção</title>
 
-    <title>Roteiros Poços de Caldas – Passeios, City Tour & Experiências</title>
+  <style>
+    /* Fundo ocupando toda a tela */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
 
-    <meta
-      name="description"
-      content="Roteiros Poços de Caldas – City tour, teleférico, Cristo Redentor, mirantes, recantos e experiências completas com guia especializado em Poços de Caldas."
-    />
-    <meta
-      name="keywords"
-      content="roteiros poços de caldas, city tour poços de caldas, cristo redentor, teleférico, mirantes, recanto japonês, cascata véu das noivas, turismo em poços"
-    />
-    <meta name="author" content="Roteiros Poços de Caldas" />
+      /* IMAGEM DE FUNDO */
+      background-image: url("assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="script.js" defer></script>
-  </head>
+    /* Camada escura para melhorar visual do texto */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+    }
 
-  <body>
-    <!-- BARRA SUPERIOR -->
+    .conteudo {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 1.2rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Botão WhatsApp */
+    .btn-whats {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      background: #25d366;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.4);
+      transition: 0.3s;
+    }
+
+    .btn-whats:hover {
+      background: #1ebd5a;
+      transform: translateY(-3px);
+    }
+
+    /* Ícone */
+    .btn-whats img {
+      width: 26px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="conteudo">
+    <h1>Estamos em Manutenção</h1>
     <p>
-      Poços de Caldas – MG |
-      Telefone: (35) 3014-0962 |
-      WhatsApp: (35) 9 8895-1441
+      Estamos realizando melhorias no site para oferecer a melhor experiência.<br />
+      Voltaremos em breve!
     </p>
 
-    <!-- CABEÇALHO -->
-    <header>
-      <div class="container">
-        <div class="logo">
-          <span>PC</span>
-          <div>
-            <strong>Roteiros Poços de Caldas</strong>
-            <small>Turismo, City Tour & Experiências</small>
-          </div>
-        </div>
-
-        <nav>
-          <a href="#sobre">Sobre</a>
-          <a href="#roteiros">Roteiros</a>
-          <a href="#galeria">Galeria</a>
-          <a href="#contato">Contato</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div class="container hero-inner">
-          <div>
-            <h2>Conheça o melhor de Poços de Caldas com guia especializado</h2>
-            <h3>
-              Teleférico, Cristo Redentor, mirantes e muito mais em roteiros completos.
-            </h3>
-            <p>
-              City tour, passeios personalizados e excursões para grupos, famílias e
-              terceira idade, com conforto, segurança e aquele cuidado mineiro.
-            </p>
-
-            <div class="hero-badges">
-              <span>Roteiros para 1 dia ou fim de semana</span>
-              <span>Grupos e excursões</span>
-              <span>Guias credenciados</span>
-            </div>
-
-            <div class="hero-buttons">
-              <a
-                class="btn btn-primary"
-                href="https://wa.me/5535988951441"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Reservar pelo WhatsApp</a
-              >
-              <a href="#roteiros" class="btn btn-outline"
-                >Ver roteiros disponíveis</a
-              >
-            </div>
-          </div>
-
-          <!-- CARROSSEL DO HERO (LADO DIREITO) -->
-          <div class="hero-media">
-            <div class="simple-carousel simple-carousel--hero">
-              <img
-                src="assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg"
-                alt="Teleférico em Poços de Caldas"
-              />
-              <img
-                src="assets/img/parque-do-cristo-mirante-pocos-de-caldas.jpg"
-                alt="Cristo Redentor em Poços de Caldas"
-              />
-              <img
-                src="assets/img/cascata-veu-das-noivas.jpg"
-                alt="Cascata Véu das Noivas em Poços de Caldas"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SOBRE -->
-      <section id="sobre" class="section">
-        <div class="container sobre-grid">
-          <div>
-            <h2>Sobre os Roteiros Poços de Caldas</h2>
-            <p>
-              Experiências completas para você conhecer os principais pontos turísticos
-              da cidade sem se preocupar com nada.
-            </p>
-            <p>
-              Os roteiros são pensados para quem quer aproveitar Poços de Caldas com
-              tranquilidade: teleférico, Cristo Redentor, mirantes, parques, praças,
-              fontes de águas termais, compras e gastronomia local.
-            </p>
-            <p>
-              Seja para grupos de excursão, famílias, terceira idade ou casais,
-              montamos o passeio ideal, com tempo de parada, fotos e aquele guia que
-              conhece cada detalhe da cidade.
-            </p>
-          </div>
-
-          <!-- CARD COM CARROSSEL LATERAL -->
-          <aside class="sobre-card">
-            <div class="simple-carousel simple-carousel--about">
-              <img
-                src="assets/img/guia-paulo-rogerio-pocos-de-caldas-turistas.jpg"
-                alt="Guia com grupo de turistas em Poços de Caldas"
-              />
-              <img
-                src="assets/img/familia-com-guia-paulo-rogerio-no-relogio-floral.jpg"
-                alt="Família com guia no relógio floral em Poços de Caldas"
-              />
-              <img
-                src="assets/img/recanto-japones-pocos-de-caldas-entrada.jpg"
-                alt="Recanto Japonês em Poços de Caldas"
-              />
-            </div>
-            <div class="sobre-card-text">
-              <strong>Atendimento personalizado</strong>
-              <p>
-                Roteiros ajustados ao perfil do grupo, com horários flexíveis, apoio
-                durante todo o passeio e orientações sobre cada ponto turístico.
-              </p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- ROTEIROS EM DESTAQUE -->
-      <section id="roteiros" class="section">
-        <div class="container">
-          <h2>Roteiros em Destaque</h2>
-          <p>
-            Escolha o roteiro ideal para o seu grupo e solicite um orçamento sem
-            compromisso.
-          </p>
-
-          <div class="roteiros-grid">
-            <!-- CARD 1 -->
-            <div class="roteiro-card">
-              <img
-                src="assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg"
-                alt="Teleférico com vista da cidade de Poços de Caldas"
-              />
-              <h3>City Tour Clássico</h3>
-              <h4>Teleférico &amp; Cristo Redentor</h4>
-              <p>
-                Subida de teleférico com vista da Serra da Mantiqueira e parada no
-                Cristo Redentor, com tempo para fotos, mirantes e contemplação.
-              </p>
-              <div class="info">
-                ⏱️ Duração média: 3 a 4 horas · Ideal para famílias e grupos
-              </div>
-              <a
-                href="https://wa.me/5535988951441"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn"
-                >Quero este roteiro</a
-              >
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="roteiro-card">
-              <img
-                src="assets/img/mirante-santa-rita-pocos-de-caldas-1.jpg"
-                alt="Mirante de Santa Rita em Poços de Caldas"
-              />
-              <h3>Mirantes &amp; Paisagens</h3>
-              <h4>Mirante de Santa Rita &amp; Serra</h4>
-              <p>
-                Vista panorâmica da cidade, parada em mirantes estratégicos e tempo
-                para apreciar o pôr do sol (quando o horário permite).
-              </p>
-              <div class="info">
-                ⏱️ Duração média: 2 a 3 horas · Focado em fotos e paisagens
-              </div>
-              <a
-                href="https://wa.me/5535988951441"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn"
-                >Quero este roteiro</a
-              >
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="roteiro-card">
-              <img
-                src="assets/img/guia-paulo-rogerio-pocos-de-caldas-turistas.jpg"
-                alt="Grupo de turistas em roteiro completo em Poços de Caldas"
-              />
-              <h3>Dia Completo</h3>
-              <h4>City Tour Completo Poços</h4>
-              <p>
-                Roteiro completo pelos principais cartões-postais de Poços de Caldas,
-                com paradas em parques, praças, fontes e pontos históricos.
-              </p>
-              <div class="info">
-                ⏱️ Duração média: 6 a 8 horas · Possibilidade de incluir parada para
-                almoço
-              </div>
-              <a
-                href="https://wa.me/5535988951441"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn"
-                >Quero este roteiro</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- GALERIA -->
-      <section id="galeria" class="section">
-        <div class="container">
-          <h2>Galeria de Imagens</h2>
-          <p>
-            Alguns dos cenários que você vai conhecer nos roteiros em Poços de Caldas.
-          </p>
-
-          <div class="galeria-grid">
-            <div class="galeria-item">
-              <img
-                src="assets/img/por-do-sol-no-cristo-redentor-natal.jpg"
-                alt="Pôr do Sol – Cristo Redentor"
-              />
-              <div class="galeria-caption">Pôr do Sol – Cristo Redentor</div>
-            </div>
-
-            <div class="galeria-item">
-              <img
-                src="assets/img/parque-do-cristo-mirante-pocos-de-caldas.jpg"
-                alt="Cristo Redentor em Poços de Caldas"
-              />
-              <div class="galeria-caption">Cristo Redentor</div>
-            </div>
-
-            <div class="galeria-item">
-              <img
-                src="assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg"
-                alt="Vista panorâmica de Poços de Caldas"
-              />
-              <div class="galeria-caption">Vista panorâmica da cidade</div>
-            </div>
-
-            <div class="galeria-item">
-              <img
-                src="assets/img/mirante-santa-rita-panoramica.jpg"
-                alt="Mirante de Santa Rita"
-              />
-              <div class="galeria-caption">Mirante de Santa Rita</div>
-            </div>
-
-            <div class="galeria-item">
-              <img
-                src="assets/img/cascata-veu-das-noivas.jpg"
-                alt="Cascata Véu das Noivas"
-              />
-              <div class="galeria-caption">Cascata Véu das Noivas</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CLIMA + INFO RÁPIDAS (AMANHÃ ENTRA O WIDGET DE CLIMA) -->
-      <section class="section">
-        <div class="container section-clima">
-          <h2>Clima &amp; Informações rápidas</h2>
-
-          <div class="widget-clima">
-            <!-- AMANHÃ: aqui entra o código do widget de previsão do tempo -->
-            <p>
-              Previsão do tempo em Poços de Caldas com atualização diária. Em breve,
-              este bloco será substituído por um widget de clima em tempo real.
-            </p>
-          </div>
-
-          <div class="info-rapidas">
-            <p>📍 Saídas a partir do centro de Poços de Caldas.</p>
-            <p>🚌 Opção de transporte para grupos e excursões.</p>
-            <p>📸 Paradas para fotos nos principais cartões-postais.</p>
-            <p>🍽️ Sugestões de restaurantes e cafés durante o passeio.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTATO -->
-      <section id="contato" class="section section-contato">
-        <div class="container contato-grid">
-          <div>
-            <h2>Fale Conosco</h2>
-            <p>
-              Solicite seu orçamento, envie sua dúvida ou reserve seu passeio.
-            </p>
-
-            <p><strong>Telefone fixo:</strong> (35) 3014-0962</p>
-            <p><strong>WhatsApp:</strong> (35) 9 8895-1441</p>
-            <p><strong>E-mail:</strong> contato@roteirospocosdecaldas.com.br</p>
-
-            <p>
-              Atendimento todos os dias, conforme agendamento. Atendemos excursões,
-              grupos fechados, agências parceiras e famílias.
-            </p>
-
-            <a
-              href="https://wa.me/5535988951441"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-              >Chamar no WhatsApp</a
-            >
-          </div>
-
-          <div class="contato-form">
-            <h3>Formulário de contato (ilustrativo)</h3>
-            <form>
-              <label>
-                Nome
-                <input type="text" placeholder="Seu nome" />
-              </label>
-
-              <label>
-                E-mail
-                <input type="email" placeholder="Seu melhor e-mail" />
-              </label>
-
-              <label>
-                Telefone / WhatsApp
-                <input type="tel" placeholder="(DDD) 9 9999-9999" />
-              </label>
-
-              <label>
-                Mensagem
-                <textarea
-                  rows="4"
-                  placeholder="Escreva aqui sua dúvida ou pedido de orçamento."
-                ></textarea>
-              </label>
-
-              <button type="button" class="btn btn-outline">
-                Enviar mensagem (configurar envio de e-mail)
-              </button>
-
-              <small
-                >*Este formulário é ilustrativo. Consulte o responsável pelo site
-                para configurar o envio para o seu e-mail.</small
-              >
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- RODAPÉ -->
-    <footer>
-      <p>© 2025 Roteiros Poços de Caldas – Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- BARRA DE COOKIES (JÁ ESTILIZADA NO CSS) -->
-    <div class="cookie-banner" id="cookie-banner">
-      <p>
-        Usamos cookies para melhorar sua experiência nos roteiros de Poços de Caldas.
-        Ao continuar navegando, você concorda com nossa política de cookies.
-      </p>
-      <button class="btn-cookie-config" type="button">Configurar</button>
-      <button class="btn-cookie-aceitar" type="button">Aceitar</button>
-    </div>
-  </body>
+    <!-- Botão WhatsApp -->
+    <a class="btn-whats" href="https://wa.me/5535988951441" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      Falar no WhatsApp
+    </a>
+  </div>
+</body>
 </html>
