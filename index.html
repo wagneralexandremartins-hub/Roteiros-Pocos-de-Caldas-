@@ -2,518 +2,46 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
-    <title>Roteiros Poços de Caldas – Passeios, City Tour e Turismo</title>
+    <title>Roteiros Poços de Caldas – Passeios, City Tour & Experiências</title>
 
-    <!-- SEO básico -->
     <meta
       name="description"
-      content="Roteiros Poços de Caldas – Passeios guiados, city tour, mirantes, teleférico e experiências completas em Poços de Caldas, MG, com guia especializado."
+      content="Roteiros Poços de Caldas – City tour, teleférico, Cristo Redentor, mirantes, recantos e experiências completas com guia especializado em Poços de Caldas."
     />
     <meta
       name="keywords"
-      content="roteiros poços de caldas, turismo poços de caldas, city tour, passeios guiados, cristo redentor, teleférico, mirantes, excursões"
+      content="roteiros poços de caldas, city tour poços de caldas, cristo redentor, teleférico, mirantes, recanto japonês, cascata véu das noivas, turismo em poços"
     />
     <meta name="author" content="Roteiros Poços de Caldas" />
 
-    <style>
-      /* ====================================
-         RESET / BASE
-      ==================================== */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f5f5f5;
-        color: #333;
-        line-height: 1.6;
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      .container {
-        width: 95%;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      /* ====================================
-         TOPO / CONTATO RÁPIDO
-      ==================================== */
-      .top-bar {
-        background: #075a74;
-        color: #fff;
-        font-size: 14px;
-        padding: 6px 0;
-        text-align: center;
-      }
-
-      .top-bar span {
-        display: inline-block;
-        margin: 0 5px;
-      }
-
-      .top-bar a {
-        color: #fff;
-        font-weight: bold;
-      }
-
-      /* ====================================
-         HEADER
-      ==================================== */
-      header {
-        background: #0e7b9b;
-        color: #fff;
-        padding: 12px 0;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      }
-
-      .header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-      }
-
-      .logo-area {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .logo-circle {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #fff;
-        color: #0e7b9b;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 900;
-        font-size: 18px;
-      }
-
-      .logo-text h1 {
-        font-size: 20px;
-      }
-
-      .logo-text p {
-        font-size: 13px;
-        opacity: 0.9;
-      }
-
-      nav a {
-        margin-left: 15px;
-        font-weight: bold;
-        font-size: 14px;
-      }
-
-      nav a:hover {
-        text-decoration: underline;
-      }
-
-      /* ====================================
-         HERO
-      ==================================== */
-      .hero {
-        padding: 30px 0 20px;
-        background: linear-gradient(180deg, #e5f6fb 0%, #f5f5f5 100%);
-      }
-
-      .hero-inner {
-        display: grid;
-        grid-template-columns: 2fr 1.2fr;
-        gap: 20px;
-        align-items: center;
-      }
-
-      .hero h2 {
-        font-size: 26px;
-        margin-bottom: 8px;
-        color: #0e7b9b;
-      }
-
-      .hero h3 {
-        font-size: 18px;
-        margin-bottom: 12px;
-        color: #155d78;
-      }
-
-      .hero p {
-        margin-bottom: 12px;
-        font-size: 15px;
-      }
-
-      .hero-badges {
-        font-size: 13px;
-        margin-top: 6px;
-        color: #444;
-      }
-
-      .hero-badges span::before {
-        content: "• ";
-      }
-
-      .hero-buttons {
-        margin-top: 14px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .btn {
-        padding: 10px 18px;
-        border-radius: 8px;
-        font-weight: bold;
-        font-size: 14px;
-        cursor: pointer;
-        border: none;
-        display: inline-block;
-      }
-
-      .btn-primary {
-        background: #0e7b9b;
-        color: #fff;
-      }
-
-      .btn-primary:hover {
-        background: #095a72;
-      }
-
-      .btn-outline {
-        background: #fff;
-        color: #0e7b9b;
-        border: 2px solid #0e7b9b;
-      }
-
-      .btn-outline:hover {
-        background: #e4f1f6;
-      }
-
-      .hero-img {
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
-
-      /* ====================================
-         SEÇÕES / TÍTULOS
-      ==================================== */
-      .section {
-        padding: 25px 0;
-      }
-
-      .section-title {
-        font-size: 22px;
-        margin-bottom: 10px;
-        color: #0e7b9b;
-      }
-
-      .section-subtitle {
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
-
-      /* ====================================
-         SOBRE
-      ==================================== */
-      .sobre-grid {
-        display: grid;
-        grid-template-columns: 2fr 1.2fr;
-        gap: 20px;
-        align-items: flex-start;
-      }
-
-      .sobre-list p::before {
-        content: "✔ ";
-        color: #0e7b9b;
-        font-weight: bold;
-      }
-
-      .card {
-        background: #fff;
-        border-radius: 12px;
-        padding: 16px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        margin-bottom: 16px;
-      }
-
-      /* ====================================
-         ROTEIROS EM DESTAQUE
-      ==================================== */
-      .roteiros-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      .roteiro-card img {
-        border-radius: 10px;
-        margin-bottom: 10px;
-        height: 170px;
-        object-fit: cover;
-        width: 100%;
-      }
-
-      .roteiro-card h3 {
-        font-size: 17px;
-        color: #0e7b9b;
-        margin-bottom: 4px;
-      }
-
-      .roteiro-card h4 {
-        font-size: 15px;
-        margin-bottom: 8px;
-      }
-
-      .roteiro-card p {
-        font-size: 14px;
-        margin-bottom: 6px;
-      }
-
-      .roteiro-card .info {
-        font-size: 13px;
-        margin-bottom: 10px;
-        color: #444;
-      }
-
-      .roteiro-card .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      /* ====================================
-         CLIMA + INFORMAÇÕES RÁPIDAS
-      ==================================== */
-      .duas-colunas {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 18px;
-      }
-
-      .clima-title {
-        font-size: 18px;
-        color: #0e7b9b;
-        margin-bottom: 8px;
-      }
-
-      .clima-placeholder {
-        margin-top: 8px;
-        font-size: 13px;
-        color: #555;
-        font-style: italic;
-      }
-
-      .info-list p::before {
-        content: "✅ ";
-        color: #0e7b9b;
-        font-weight: bold;
-      }
-
-      /* ====================================
-         GALERIA
-      ==================================== */
-      .galeria-section {
-        padding-top: 15px;
-      }
-
-      .galeria-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .galeria-item {
-        background: #000;
-        border-radius: 10px;
-        overflow: hidden;
-      }
-
-      .galeria-item img {
-        width: 100%;
-        height: auto;          /* <<< NÃO VAI CORTAR A IMAGEM */
-        display: block;
-      }
-
-      .galeria-caption {
-        font-size: 12px;
-        color: #f5f5f5;
-        padding: 4px 6px 6px;
-        background: rgba(0, 0, 0, 0.6);
-      }
-
-      /* ====================================
-         CONTATO
-      ==================================== */
-      .contato-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 1.3fr;
-        gap: 20px;
-      }
-
-      .contato-dados p {
-        margin-bottom: 8px;
-        font-size: 14px;
-      }
-
-      .contato-dados strong {
-        color: #0e7b9b;
-      }
-
-      .contato-form label {
-        font-size: 14px;
-        display: block;
-        margin-bottom: 4px;
-      }
-
-      .contato-form input,
-      .contato-form textarea {
-        width: 100%;
-        padding: 8px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-
-      .contato-form textarea {
-        min-height: 100px;
-        resize: vertical;
-      }
-
-      /* ====================================
-         RODAPÉ
-      ==================================== */
-      footer {
-        background: #0e7b9b;
-        color: #fff;
-        text-align: center;
-        padding: 18px 10px 40px;
-        margin-top: 30px;
-        position: relative;
-      }
-
-      footer p {
-        font-size: 13px;
-      }
-
-      /* ====================================
-         BARRA DE COOKIES
-      ==================================== */
-      .cookie-banner {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #143643;
-        color: #fff;
-        padding: 10px 12px;
-        font-size: 13px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-        z-index: 999;
-      }
-
-      .cookie-banner-buttons {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-      }
-
-      .cookie-btn {
-        padding: 6px 12px;
-        border-radius: 8px;
-        font-size: 12px;
-        cursor: pointer;
-        border: none;
-      }
-
-      .cookie-btn-config {
-        background: #fff;
-        color: #143643;
-      }
-
-      .cookie-btn-accept {
-        background: #11a05c;
-        color: #fff;
-      }
-
-      /* ====================================
-         RESPONSIVO
-      ==================================== */
-      @media (max-width: 900px) {
-        .hero-inner,
-        .sobre-grid,
-        .roteiros-grid,
-        .duas-colunas,
-        .contato-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .roteiros-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .galeria-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .header-inner {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        nav {
-          margin-top: 8px;
-        }
-      }
-
-      @media (max-width: 600px) {
-        .hero h2 {
-          font-size: 22px;
-        }
-        .hero h3 {
-          font-size: 16px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
-    <!-- TOPO CONTATO -->
-    <div class="top-bar">
-      <span>Poços de Caldas – MG</span> |
-      <span>☎ (35) 3014-0962</span> |
-      <span>WhatsApp: <a href="https://wa.me/5535988951441">(35) 9 8895-1441</a></span>
-    </div>
+    <!-- BARRA SUPERIOR -->
+    <p>
+      Poços de Caldas – MG |
+      Telefone: (35) 3014-0962 |
+      WhatsApp: (35) 9 8895-1441
+    </p>
 
-    <!-- HEADER -->
+    <!-- CABEÇALHO -->
     <header>
-      <div class="container header-inner">
-        <div class="logo-area">
-          <div class="logo-circle">PC</div>
-          <div class="logo-text">
-            <h1>Roteiros Poços de Caldas</h1>
-            <p>Turismo, City Tour & Experiências</p>
+      <div class="container">
+        <div class="logo">
+          <span>PC</span>
+          <div>
+            <strong>Roteiros Poços de Caldas</strong>
+            <small>Turismo, City Tour & Experiências</small>
           </div>
         </div>
+
         <nav>
           <a href="#sobre">Sobre</a>
           <a href="#roteiros">Roteiros</a>
@@ -523,308 +51,348 @@
       </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div>
-          <h2>Conheça o melhor de Poços de Caldas com guia especializado</h2>
-          <h3>Teleférico, Cristo Redentor, mirantes e muito mais em roteiros completos.</h3>
-          <p>
-            City tour, passeios personalizados e excursões para grupos, famílias e terceira idade,
-            com conforto, segurança e aquele cuidado mineiro.
-          </p>
-          <div class="hero-badges">
-            <span>Roteiros para 1 dia ou fim de semana</span>
-            <span>Grupos e excursões</span>
-            <span>Guias credenciados</span>
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <div>
+            <h2>Conheça o melhor de Poços de Caldas com guia especializado</h2>
+            <h3>
+              Teleférico, Cristo Redentor, mirantes e muito mais em roteiros completos.
+            </h3>
+            <p>
+              City tour, passeios personalizados e excursões para grupos, famílias e
+              terceira idade, com conforto, segurança e aquele cuidado mineiro.
+            </p>
+
+            <div class="hero-badges">
+              <span>Roteiros para 1 dia ou fim de semana</span>
+              <span>Grupos e excursões</span>
+              <span>Guias credenciados</span>
+            </div>
+
+            <div class="hero-buttons">
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/5535988951441"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Reservar pelo WhatsApp</a
+              >
+              <a href="#roteiros" class="btn btn-outline"
+                >Ver roteiros disponíveis</a
+              >
+            </div>
           </div>
-          <div class="hero-buttons">
+
+          <!-- CARROSSEL DO HERO (LADO DIREITO) -->
+          <div class="hero-media">
+            <div class="simple-carousel simple-carousel--hero">
+              <img
+                src="assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg"
+                alt="Teleférico em Poços de Caldas"
+              />
+              <img
+                src="assets/img/parque-do-cristo-mirante-pocos-de-caldas.jpg"
+                alt="Cristo Redentor em Poços de Caldas"
+              />
+              <img
+                src="assets/img/cascata-veu-das-noivas.jpg"
+                alt="Cascata Véu das Noivas em Poços de Caldas"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+      <section id="sobre" class="section">
+        <div class="container sobre-grid">
+          <div>
+            <h2>Sobre os Roteiros Poços de Caldas</h2>
+            <p>
+              Experiências completas para você conhecer os principais pontos turísticos
+              da cidade sem se preocupar com nada.
+            </p>
+            <p>
+              Os roteiros são pensados para quem quer aproveitar Poços de Caldas com
+              tranquilidade: teleférico, Cristo Redentor, mirantes, parques, praças,
+              fontes de águas termais, compras e gastronomia local.
+            </p>
+            <p>
+              Seja para grupos de excursão, famílias, terceira idade ou casais,
+              montamos o passeio ideal, com tempo de parada, fotos e aquele guia que
+              conhece cada detalhe da cidade.
+            </p>
+          </div>
+
+          <!-- CARD COM CARROSSEL LATERAL -->
+          <aside class="sobre-card">
+            <div class="simple-carousel simple-carousel--about">
+              <img
+                src="assets/img/guia-paulo-rogerio-pocos-de-caldas-turistas.jpg"
+                alt="Guia com grupo de turistas em Poços de Caldas"
+              />
+              <img
+                src="assets/img/familia-com-guia-paulo-rogerio-no-relogio-floral.jpg"
+                alt="Família com guia no relógio floral em Poços de Caldas"
+              />
+              <img
+                src="assets/img/recanto-japones-pocos-de-caldas-entrada.jpg"
+                alt="Recanto Japonês em Poços de Caldas"
+              />
+            </div>
+            <div class="sobre-card-text">
+              <strong>Atendimento personalizado</strong>
+              <p>
+                Roteiros ajustados ao perfil do grupo, com horários flexíveis, apoio
+                durante todo o passeio e orientações sobre cada ponto turístico.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ROTEIROS EM DESTAQUE -->
+      <section id="roteiros" class="section">
+        <div class="container">
+          <h2>Roteiros em Destaque</h2>
+          <p>
+            Escolha o roteiro ideal para o seu grupo e solicite um orçamento sem
+            compromisso.
+          </p>
+
+          <div class="roteiros-grid">
+            <!-- CARD 1 -->
+            <div class="roteiro-card">
+              <img
+                src="assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg"
+                alt="Teleférico com vista da cidade de Poços de Caldas"
+              />
+              <h3>City Tour Clássico</h3>
+              <h4>Teleférico &amp; Cristo Redentor</h4>
+              <p>
+                Subida de teleférico com vista da Serra da Mantiqueira e parada no
+                Cristo Redentor, com tempo para fotos, mirantes e contemplação.
+              </p>
+              <div class="info">
+                ⏱️ Duração média: 3 a 4 horas · Ideal para famílias e grupos
+              </div>
+              <a
+                href="https://wa.me/5535988951441"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                >Quero este roteiro</a
+              >
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="roteiro-card">
+              <img
+                src="assets/img/mirante-santa-rita-pocos-de-caldas-1.jpg"
+                alt="Mirante de Santa Rita em Poços de Caldas"
+              />
+              <h3>Mirantes &amp; Paisagens</h3>
+              <h4>Mirante de Santa Rita &amp; Serra</h4>
+              <p>
+                Vista panorâmica da cidade, parada em mirantes estratégicos e tempo
+                para apreciar o pôr do sol (quando o horário permite).
+              </p>
+              <div class="info">
+                ⏱️ Duração média: 2 a 3 horas · Focado em fotos e paisagens
+              </div>
+              <a
+                href="https://wa.me/5535988951441"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                >Quero este roteiro</a
+              >
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="roteiro-card">
+              <img
+                src="assets/img/guia-paulo-rogerio-pocos-de-caldas-turistas.jpg"
+                alt="Grupo de turistas em roteiro completo em Poços de Caldas"
+              />
+              <h3>Dia Completo</h3>
+              <h4>City Tour Completo Poços</h4>
+              <p>
+                Roteiro completo pelos principais cartões-postais de Poços de Caldas,
+                com paradas em parques, praças, fontes e pontos históricos.
+              </p>
+              <div class="info">
+                ⏱️ Duração média: 6 a 8 horas · Possibilidade de incluir parada para
+                almoço
+              </div>
+              <a
+                href="https://wa.me/5535988951441"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                >Quero este roteiro</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA -->
+      <section id="galeria" class="section">
+        <div class="container">
+          <h2>Galeria de Imagens</h2>
+          <p>
+            Alguns dos cenários que você vai conhecer nos roteiros em Poços de Caldas.
+          </p>
+
+          <div class="galeria-grid">
+            <div class="galeria-item">
+              <img
+                src="assets/img/por-do-sol-no-cristo-redentor-natal.jpg"
+                alt="Pôr do Sol – Cristo Redentor"
+              />
+              <div class="galeria-caption">Pôr do Sol – Cristo Redentor</div>
+            </div>
+
+            <div class="galeria-item">
+              <img
+                src="assets/img/parque-do-cristo-mirante-pocos-de-caldas.jpg"
+                alt="Cristo Redentor em Poços de Caldas"
+              />
+              <div class="galeria-caption">Cristo Redentor</div>
+            </div>
+
+            <div class="galeria-item">
+              <img
+                src="assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg"
+                alt="Vista panorâmica de Poços de Caldas"
+              />
+              <div class="galeria-caption">Vista panorâmica da cidade</div>
+            </div>
+
+            <div class="galeria-item">
+              <img
+                src="assets/img/mirante-santa-rita-panoramica.jpg"
+                alt="Mirante de Santa Rita"
+              />
+              <div class="galeria-caption">Mirante de Santa Rita</div>
+            </div>
+
+            <div class="galeria-item">
+              <img
+                src="assets/img/cascata-veu-das-noivas.jpg"
+                alt="Cascata Véu das Noivas"
+              />
+              <div class="galeria-caption">Cascata Véu das Noivas</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLIMA + INFO RÁPIDAS (AMANHÃ ENTRA O WIDGET DE CLIMA) -->
+      <section class="section">
+        <div class="container section-clima">
+          <h2>Clima &amp; Informações rápidas</h2>
+
+          <div class="widget-clima">
+            <!-- AMANHÃ: aqui entra o código do widget de previsão do tempo -->
+            <p>
+              Previsão do tempo em Poços de Caldas com atualização diária. Em breve,
+              este bloco será substituído por um widget de clima em tempo real.
+            </p>
+          </div>
+
+          <div class="info-rapidas">
+            <p>📍 Saídas a partir do centro de Poços de Caldas.</p>
+            <p>🚌 Opção de transporte para grupos e excursões.</p>
+            <p>📸 Paradas para fotos nos principais cartões-postais.</p>
+            <p>🍽️ Sugestões de restaurantes e cafés durante o passeio.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section id="contato" class="section section-contato">
+        <div class="container contato-grid">
+          <div>
+            <h2>Fale Conosco</h2>
+            <p>
+              Solicite seu orçamento, envie sua dúvida ou reserve seu passeio.
+            </p>
+
+            <p><strong>Telefone fixo:</strong> (35) 3014-0962</p>
+            <p><strong>WhatsApp:</strong> (35) 9 8895-1441</p>
+            <p><strong>E-mail:</strong> contato@roteirospocosdecaldas.com.br</p>
+
+            <p>
+              Atendimento todos os dias, conforme agendamento. Atendemos excursões,
+              grupos fechados, agências parceiras e famílias.
+            </p>
+
             <a
-              class="btn btn-primary"
               href="https://wa.me/5535988951441"
               target="_blank"
               rel="noopener noreferrer"
-              >Reservar pelo WhatsApp</a
-            >
-            <a href="#roteiros" class="btn btn-outline">Ver roteiros disponíveis</a>
-          </div>
-        </div>
-        <div class="hero-img">
-          <!-- Use uma foto horizontal bonita aqui -->
-          <img src="assets/img/teleferico-pocos-de-caldas.jpg" alt="Teleférico em Poços de Caldas" />
-        </div>
-      </div>
-    </section>
-
-    <!-- SOBRE -->
-    <section id="sobre" class="section">
-      <div class="container sobre-grid">
-        <div>
-          <h2 class="section-title">Sobre os Roteiros Poços de Caldas</h2>
-          <p>
-            Experiências completas para você conhecer os principais pontos turísticos da cidade
-            sem se preocupar com nada.
-          </p>
-          <p style="margin-top: 8px;">
-            Os roteiros são pensados para quem quer aproveitar Poços de Caldas com tranquilidade:
-            teleférico, Cristo Redentor, mirantes, parques, praças, fontes de águas termais,
-            compras e gastronomia local.
-          </p>
-          <p style="margin-top: 8px;">
-            Seja para grupos de excursão, famílias, terceira idade ou casais, montamos o passeio
-            ideal, com tempo de parada, fotos e suporte do guia durante todo o percurso.
-          </p>
-          <div class="card sobre-list" style="margin-top: 14px;">
-            <p>Excursões e grupos organizados</p>
-            <p>Roteiros especiais para terceira idade</p>
-            <p>Paradas estratégicas para fotos</p>
-            <p>Opções de meio período ou dia completo</p>
-          </div>
-        </div>
-        <div>
-          <div class="card">
-            <img
-              src="assets/img/guia-com-grupo-de-turistas.jpg"
-              alt="Guia com grupo de turistas em Poços de Caldas"
-            />
-            <p style="font-size: 13px; margin-top: 8px;">
-              Atendimento personalizado para grupos, famílias e excursões.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ROTEIROS EM DESTAQUE -->
-    <section id="roteiros" class="section" style="background: #eef6f9;">
-      <div class="container">
-        <h2 class="section-title">Roteiros em Destaque</h2>
-        <p class="section-subtitle">
-          Escolha o roteiro ideal para o seu grupo e solicite um orçamento sem compromisso.
-        </p>
-
-        <div class="roteiros-grid">
-
-  <!-- CARD 1 -->
-  <div class="roteiro-card">
-    <img 
-      src="assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg" 
-      alt="Teleférico com vista da cidade de Poços de Caldas"
-    />
-    <h3>City Tour Clássico</h3>
-    <h4>Teleférico & Cristo Redentor</h4>
-    <p>
-      Subida de teleférico com vista da Serra da Mantiqueira e parada no Cristo Redentor,
-      com tempo para fotos, mirantes e contemplação.
-    </p>
-    <div class="info">
-      ⏱️ Duração média: 3 a 4 horas · Ideal para famílias e grupos
-    </div>
-    <a href="#" class="btn">Quero este roteiro</a>
-  </div>
-
-  <!-- CARD 2 -->
-  <div class="roteiro-card">
-    <img 
-      src="assets/img/mirante-santa-rita-pocos-de-caldas-1.jpg"
-      alt="Mirante de Santa Rita em Poços de Caldas"
-    />
-    <h3>Mirantes & Paisagens</h3>
-    <h4>Mirante de Santa Rita & Serra</h4>
-    <p>
-      Vista panorâmica da cidade, parada em mirantes estratégicos e tempo para apreciar
-      o pôr do sol (quando o horário permite).
-    </p>
-    <div class="info">
-      ⏱️ Duração média: 2 a 3 horas · Focado em fotos e paisagens
-    </div>
-    <a href="#" class="btn">Quero este roteiro</a>
-  </div>
-
-  <!-- CARD 3 -->
-  <div class="roteiro-card">
-    <img 
-      src="assets/img/guia-paulo-rogerio-pocos-de-caldas-turistas.jpg"
-      alt="Grupo de turistas em roteiro completo em Poços de Caldas"
-    />
-    <h3>Dia Completo</h3>
-    <h4>City Tour Completo Poços</h4>
-    <p>
-      Roteiro completo pelos principais cartões-postais de Poços de Caldas,
-      com paradas em parques, praças, fontes e pontos históricos.
-    </p>
-    <div class="info">
-      ⏱️ Duração média: 6 a 8 horas · Possibilidade de incluir parada para almoço
-    </div>
-    <a href="#" class="btn">Quero este roteiro</a>
-  </div>
-
-</div>
-        
-    </section>
-
-    <!-- CLIMA + INFORMAÇÕES RÁPIDAS -->
-    <section class="section">
-      <div class="container duas-colunas">
-        <div class="card">
-          <h2 class="section-title" id="clima">Clima em Poços de Caldas ☁</h2>
-          <p>Verifique a previsão do tempo antes do seu passeio e organize melhor sua visita.</p>
-          <div class="clima-placeholder">
-            Widget de previsão do tempo (substituir depois pelo código oficial do site de clima).
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="clima-title">Informações rápidas</h3>
-          <div class="info-list" style="margin-top: 6px;">
-            <p>Guias com experiência em grupos e excursões</p>
-            <p>Roteiros adaptados para terceira idade</p>
-            <p>Paradas para fotos, compras e lanches</p>
-            <p>Roteiros personalizados para agências e caravanas</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALERIA -->
-    <section id="galeria" class="section galeria-section">
-      <div class="container">
-        <h2 class="section-title">Galeria de Imagens</h2>
-        <p class="section-subtitle">
-          Alguns dos cenários que você vai conhecer nos roteiros em Poços de Caldas.
-        </p>
-
-        <div class="galeria-grid">
-
-  <!-- Foto Pôr do Sol – Cristo Redentor -->
-  <div class="galeria-item">
-    <img 
-      src="assets/img/por-do-sol-no-cristo-redentor-natal.jpg" 
-      alt="Pôr do Sol – Cristo Redentor"
-    />
-    <div class="galeria-caption">Pôr do Sol – Cristo Redentor</div>
-  </div>
-
-  <!-- Foto Cristo Redentor (corrigido para nome real da pasta) -->
-  <div class="galeria-item">
-    <img 
-      src="assets/img/parque-do-cristo-mirante-pocos-de-caldas.jpg"
-      alt="Cristo Redentor em Poços de Caldas"
-    />
-    <div class="galeria-caption">Cristo Redentor</div>
-  </div>
-
-  <!-- Foto Vista Panorâmica (corrigido para arquivo real) -->
-  <div class="galeria-item">
-    <img 
-      src="assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg"
-      alt="Vista panorâmica de Poços de Caldas"
-    />
-    <div class="galeria-caption">Vista panorâmica da cidade</div>
-  </div>
-
-  <!-- Foto Pedra Balão (substituto temporário, pois arquivo não existe) -->
-  <div class="galeria-item">
-    <img 
-      src="assets/img/mirante-santa-rita-panoramica.jpg"
-      alt="Pedra Balão – Foto temporária"
-    />
-    <div class="galeria-caption">Pedra Balão</div>
-  </div>
-
-  <!-- Foto Cascata Véu das Noivas (arquivo real existente) -->
-  <div class="galeria-item">
-    <img 
-      src="assets/img/cascata-veu-das-noivas.jpg"
-      alt="Cascata Véu das Noivas"
-    />
-    <div class="galeria-caption">Cascata Véu das Noivas</div>
-  </div>
-          
-          <!-- se quiser, pode adicionar mais itens aqui -->
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section id="contato" class="section">
-      <div class="container contato-grid">
-        <div class="card contato-dados">
-          <h2 class="section-title">Fale Conosco</h2>
-          <p>Solicite seu orçamento, envie sua dúvida ou reserve seu passeio.</p>
-
-          <p style="margin-top: 10px;">
-            <strong>Telefone fixo:</strong> (35) 3014-0962
-          </p>
-          <p>
-            <strong>WhatsApp:</strong>
-            <a href="https://wa.me/5535988951441" target="_blank" rel="noopener noreferrer"
-              >(35) 9 8895-1441</a
-            >
-          </p>
-          <p>
-            <strong>E-mail:</strong>
-            <a href="mailto:contato@roteirospocosdecaldas.com.br"
-              >contato@roteirospocosdecaldas.com.br</a
-            >
-          </p>
-          <p style="margin-top: 10px;">
-            Atendimento: todos os dias, conforme agendamento. Atendemos excursões, grupos fechados,
-            agências parceiras e famílias.
-          </p>
-
-          <div style="margin-top: 14px;">
-            <a
               class="btn btn-primary"
-              href="https://wa.me/5535988951441?text=Olá,%20quero%20informações%20sobre%20os%20roteiros%20em%20Poços%20de%20Caldas"
-              target="_blank"
-              rel="noopener noreferrer"
               >Chamar no WhatsApp</a
             >
           </div>
+
+          <div class="contato-form">
+            <h3>Formulário de contato (ilustrativo)</h3>
+            <form>
+              <label>
+                Nome
+                <input type="text" placeholder="Seu nome" />
+              </label>
+
+              <label>
+                E-mail
+                <input type="email" placeholder="Seu melhor e-mail" />
+              </label>
+
+              <label>
+                Telefone / WhatsApp
+                <input type="tel" placeholder="(DDD) 9 9999-9999" />
+              </label>
+
+              <label>
+                Mensagem
+                <textarea
+                  rows="4"
+                  placeholder="Escreva aqui sua dúvida ou pedido de orçamento."
+                ></textarea>
+              </label>
+
+              <button type="button" class="btn btn-outline">
+                Enviar mensagem (configurar envio de e-mail)
+              </button>
+
+              <small
+                >*Este formulário é ilustrativo. Consulte o responsável pelo site
+                para configurar o envio para o seu e-mail.</small
+              >
+            </form>
+          </div>
         </div>
-
-        <div class="card contato-form">
-          <h3 style="margin-bottom: 10px;">Formulário de contato (ilustrativo)</h3>
-          <label for="nome">Nome</label>
-          <input id="nome" type="text" placeholder="Seu nome" />
-
-          <label for="email">E-mail</label>
-          <input id="email" type="email" placeholder="Seu melhor e-mail" />
-
-          <label for="telefone">Telefone / WhatsApp</label>
-          <input id="telefone" type="text" placeholder="(DDD) 9 9999-9999" />
-
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" placeholder="Escreva aqui sua dúvida ou pedido de orçamento."></textarea>
-
-          <button class="btn btn-outline" type="button">
-            Enviar mensagem (configurar envio de e-mail)
-          </button>
-
-          <p style="font-size: 11px; margin-top: 6px; color: #777;">
-            *Este formulário é ilustrativo. Consulte o responsável pelo site para configurar o envio
-            para o seu e-mail.
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- RODAPÉ -->
     <footer>
       <p>© 2025 Roteiros Poços de Caldas – Todos os direitos reservados.</p>
     </footer>
 
-    <!-- BARRA DE COOKIES (SEM JS, APENAS VISUAL) -->
-    <div class="cookie-banner">
-      <span>
-        Usamos cookies para melhorar sua experiência nos roteiros de Poços de Caldas. Ao continuar
-        navegando, você concorda com nossa política de cookies.
-      </span>
-      <div class="cookie-banner-buttons">
-        <button class="cookie-btn cookie-btn-config" type="button">Configurar</button>
-        <button class="cookie-btn cookie-btn-accept" type="button">Aceitar</button>
-      </div>
+    <!-- BARRA DE COOKIES (JÁ ESTILIZADA NO CSS) -->
+    <div class="cookie-banner" id="cookie-banner">
+      <p>
+        Usamos cookies para melhorar sua experiência nos roteiros de Poços de Caldas.
+        Ao continuar navegando, você concorda com nossa política de cookies.
+      </p>
+      <button class="btn-cookie-config" type="button">Configurar</button>
+      <button class="btn-cookie-aceitar" type="button">Aceitar</button>
     </div>
   </body>
 </html>
