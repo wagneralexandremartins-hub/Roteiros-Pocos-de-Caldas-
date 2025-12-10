@@ -35,3 +35,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+    // ==============================
+// Carrossel simples de imagens
+// ==============================
+document.addEventListener("DOMContentLoaded", function () {
+  const carousels = document.querySelectorAll(".simple-carousel");
+
+  carousels.forEach((carousel) => {
+    const slides = carousel.querySelectorAll("img");
+    if (slides.length <= 1) return;
+
+    let index = 0;
+    slides[index].classList.add("is-active");
+
+    setInterval(() => {
+      slides[index].classList.remove("is-active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("is-active");
+    }, 5000); // 5 segundos por imagem
+  });
+});
