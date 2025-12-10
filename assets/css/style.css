@@ -1,159 +1,492 @@
-/* ===========================
-   RESET E BASE
-=========================== */
+/* =========================================
+   RESET E VARIÁVEIS GERAIS
+   ========================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --cor-primaria: #0b7285;
+  --cor-primaria-escura: #084c61;
+  --cor-secundaria: #22b8cf;
+  --cor-destaque: #ffb703;
+  --cor-fundo: #f5f5f5;
+  --cor-fundo-claro: #ffffff;
+  --cor-texto: #1f2933;
+  --cor-texto-suave: #4b5563;
+  --borda-radius: 14px;
+  --sombra-card: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   BODY / ESTRUTURA
+   ========================================= */
+
+html,
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f5f5;
-  color: #333;
-  line-height: 1.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top, #e9f5f7 0, #f5f5f5 55%, #ececec 100%);
+  color: var(--cor-texto);
+  line-height: 1.6;
 }
 
-/* ===========================
-   CABEÇALHO
-=========================== */
-header {
-  width: 100%;
-  background: #0e7b9b;
-  color: #fff;
-  padding: 15px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Centralização do conteúdo principal */
+main,
+body > div,
+body > section {
+  max-width: 1100px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1.25rem;
 }
 
-header h1 {
-  font-size: 20px;
+/* =========================================
+   BARRA SUPERIOR (TELEFONE / WHATSAPP)
+   ========================================= */
+
+/* Primeiro parágrafo do site: "Poços de Caldas – MG | ..." */
+body > p:first-of-type {
+  background: var(--cor-primaria-escura);
+  color: #ffffff;
+  text-align: center;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
 }
 
-header nav a {
-  color: #fff;
+/* Links dentro da barra superior */
+body > p:first-of-type a {
+  color: #ffffff;
   text-decoration: none;
-  margin: 0 8px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-header nav a:hover {
+body > p:first-of-type a:hover {
   text-decoration: underline;
 }
 
-/* ===========================
-   BOTÕES
-=========================== */
-.btn {
-  display: inline-block;
-  padding: 10px 18px;
-  background: #0e7b9b;
-  color: #fff;
-  border-radius: 8px;
+/* =========================================
+   TÍTULO PRINCIPAL / HERO
+   ========================================= */
+
+/* Título Roteiros Poços de Caldas */
+h1,
+h1#titulo-principal {
+  text-align: center;
+  font-size: clamp(2.3rem, 4vw, 3rem);
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.04em;
+  color: var(--cor-primaria-escura);
+}
+
+/* Subtítulo "Turismo, City Tour & Experiências" */
+h2:first-of-type {
+  text-align: center;
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  margin-bottom: 0.75rem;
+}
+
+/* =========================================
+   NAVEGAÇÃO (SOBRE / ROTEIROS / GALERIA / CONTATO)
+   ========================================= */
+
+nav,
+body nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1rem auto 1.75rem;
+}
+
+nav a,
+body nav a {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  font-weight: 600;
+  color: var(--cor-primaria-escura);
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
 }
 
-.btn:hover {
-  background: #095a72;
+nav a:hover,
+body nav a:hover {
+  border-bottom-color: var(--cor-secundaria);
+  color: var(--cor-secundaria);
 }
 
-/* ===========================
-   CARDS / SEÇÕES
-=========================== */
-.card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  margin: 10px 0;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+/* =========================================
+   TIPOGRAFIA GERAL
+   ========================================= */
+
+h2 {
+  font-size: clamp(1.6rem, 2.7vw, 2rem);
+  margin: 2.4rem 0 0.75rem;
+  color: var(--cor-primaria-escura);
 }
 
-.card h3 {
-  margin-bottom: 10px;
-  color: #0e7b9b;
+h3 {
+  font-size: 1.25rem;
+  margin: 1.4rem 0 0.4rem;
+  color: var(--cor-primaria-escura);
 }
 
-/* ===========================
-   TITULOS DE SEÇÃO
-=========================== */
-.section-title {
+h4 {
+  font-size: 1.05rem;
+  margin: 0.2rem 0 0.4rem;
+  color: var(--cor-texto-suave);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 0.75rem;
+  color: var(--cor-texto-suave);
+  font-size: 0.98rem;
+}
+
+/* Listas que o Manus às vezes gera em forma de texto corrido */
+ul {
+  margin: 0.5rem 0 0.75rem 1.2rem;
+}
+
+li {
+  margin-bottom: 0.3rem;
+}
+
+/* =========================================
+   LINKS / BOTÕES
+   ========================================= */
+
+a {
+  color: var(--cor-primaria-escura);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* Botões principais do WhatsApp */
+a[href*="wa.me"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #ffffff !important;
+  text-decoration: none;
+  padding: 0.65rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 16px rgba(19, 116, 92, 0.32);
+  border: none;
+  margin: 0.4rem 0.35rem 0.6rem;
+  white-space: nowrap;
+}
+
+a[href*="wa.me"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(19, 116, 92, 0.4);
+}
+
+/* Botão secundário (quando tiver link tipo "Ver roteiros disponíveis") */
+.btn-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--cor-primaria-escura);
+  color: var(--cor-primaria-escura);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0.4rem 0.35rem 0.6rem;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-secundario:hover {
+  background: #ffffff;
+  border-color: var(--cor-secundaria);
+  color: var(--cor-secundaria);
+}
+
+/* =========================================
+   CARDS DOS ROTEIROS EM DESTAQUE
+   (City Tour, Mirantes, Dia Completo)
+   ========================================= */
+
+.section-roteiros,
+.roteiros-destaque {
+  margin-top: 1rem;
+}
+
+/* Agrupamento em grade dos roteiros (quando estiverem em blocos) */
+.roteiros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Card genérico */
+.card,
+.card-roteiro {
+  background: var(--cor-fundo-claro);
+  border-radius: var(--borda-radius);
+  box-shadow: var(--sombra-card);
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* =========================================
+   IMAGENS – SEM CORTAR / PANORÂMICA
+   ========================================= */
+
+/* Estilo padrão para todas as imagens do site */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Remove qualquer altura fixa / aspecto “panorâmico” se tiver vindo do construtor */
+[class*="galeria"] img,
+[class*="Galeria"] img,
+[class*="gallery"] img,
+[class*="Gallery"] img,
+[class*="imagem"] img,
+[class*="Imagem"] img,
+[class*="foto"] img,
+[class*="Foto"] img,
+[class*="videos"] img,
+[class*="Videos"] img {
+  width: 100%;
+  height: auto !important;          /* SEM ALTURA FIXA */
+  max-height: none !important;
+  aspect-ratio: auto !important;    /* SEM forçar 21:9 ou parecido */
+  object-fit: contain !important;   /* Mostra a foto inteira */
+}
+
+/* Se as imagens estiverem dentro de figure */
+figure {
+  margin: 1.2rem 0;
+}
+
+figure img {
+  margin-bottom: 0.4rem;
+}
+
+/* Legendas de imagens (como na galeria) */
+figure figcaption,
+img + p {
   text-align: center;
-  margin: 35px 0 20px;
-  font-size: 26px;
-  font-weight: bold;
-  color: #0e7b9b;
+  font-size: 0.92rem;
+  color: var(--cor-texto-suave);
+  margin-top: 0.35rem;
 }
 
-/* ===========================
-   GALERIA DE IMAGENS
-=========================== */
+/* =========================================
+   GALERIA – ORGANIZAÇÃO EM GRADE
+   ========================================= */
 
+/* Container da galeria de imagens */
+.section-galeria,
+.galeria-imagens,
 .galeria {
-  width: 100%;
-  padding: 10px;
+  margin-top: 1rem;
 }
 
-.galeria img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;   /* NÃO CORTA A IMAGEM */
-  border-radius: 12px;
-  margin-bottom: 18px;
-  background: #000;      /* deixa uma borda discreta se a imagem tiver proporção diferente */
+/* Título "Galeria de Imagens" já será o h2, então aqui é a grade em si */
+.galeria-grid,
+.grade-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-/* ===========================
-   CARROSSEL (caso use)
-=========================== */
-.carousel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
+.galeria-item,
+.item-galeria {
+  background: var(--cor-fundo-claro);
+  border-radius: var(--borda-radius);
+  box-shadow: var(--sombra-card);
+  padding: 0.9rem;
 }
 
-.carousel img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+/* =========================================
+   CLIMA / INFORMAÇÕES RÁPIDAS
+   ========================================= */
+
+.section-clima {
+  margin-top: 1.5rem;
 }
 
-/* ===========================
-   RODAPÉ
-=========================== */
-footer {
-  background: #0e7b9b;
-  color: #fff;
+/* Widget de clima (quando substituir pelo código oficial) */
+.widget-clima,
+.clima-container {
+  background: var(--cor-fundo-claro);
+  border-radius: var(--borda-radius);
+  box-shadow: var(--sombra-card);
+  padding: 1rem;
+  margin: 0.6rem 0 1.2rem;
+}
+
+/* Lista "Informações rápidas" */
+.info-rapidas,
+.info-roteiros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.6rem;
+}
+
+.info-rapidas p,
+.info-roteiros p {
+  background: rgba(11, 114, 133, 0.04);
+  border-left: 3px solid var(--cor-primaria);
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+}
+
+/* =========================================
+   CONTATO / RODAPÉ
+   ========================================= */
+
+.section-contato {
+  margin-top: 2.2rem;
+}
+
+.section-contato p {
+  margin-bottom: 0.35rem;
+}
+
+/* “Chamar no WhatsApp” no contato já pega o estilo do botão principal */
+
+/* Rodapé simples */
+footer,
+body > footer {
   text-align: center;
-  padding: 20px 10px;
-  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 2rem auto 0.5rem;
 }
 
-footer p {
-  font-size: 14px;
+/* =========================================
+   COOKIE BANNER (CASO VOCÊ TENHA UM <div class="cookie-banner">)
+   ========================================= */
+
+.cookie-banner {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  background: rgba(8, 76, 97, 0.98);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  z-index: 9999;
+  font-size: 0.85rem;
 }
 
-/* ===========================
-   RESPONSIVIDADE (MOBILE)
-=========================== */
-@media (max-width: 768px) {
+.cookie-banner p {
+  margin: 0;
+  max-width: 520px;
+  color: #e5f6fb;
+}
 
-  header {
-    flex-direction: column;
-    text-align: center;
+.cookie-banner button,
+.cookie-banner a {
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cookie-banner .btn-cookie-aceitar {
+  background: var(--cor-destaque);
+  color: #1f2933;
+}
+
+.cookie-banner .btn-cookie-config {
+  background: transparent;
+  border: 1px solid #e5f6fb;
+  color: #ffffff;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (min-width: 768px) {
+  main,
+  body > div,
+  body > section {
+    padding: 0 1.5rem 3rem;
   }
 
-  header nav {
-    margin-top: 10px;
+  /* Roteiros em 3 colunas no desktop caso use a .roteiros-grid */
+  .roteiros-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Ajuste mais fino no desktop grande */
+@media (min-width: 1024px) {
+  .galeria-grid,
+  .grade-galeria {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas na galeria */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body > p:first-of-type {
+    font-size: 0.78rem;
+    padding-inline: 0.4rem;
   }
 
-  .section-title {
-    font-size: 22px;
+  nav,
+  body nav {
+    gap: 0.8rem;
   }
 
-  .galeria img {
-    border-radius: 10px;
+  nav a,
+  body nav a {
+    font-size: 0.82rem;
+  }
+
+  a[href*="wa.me"],
+  .btn-secundario {
+    width: 100%;
+    justify-content: center;
+  }
+
+  img {
+    border-radius: 12px;
+  }
+
+  .cookie-banner {
+    justify-content: flex-start;
+    padding-inline: 0.75rem;
   }
 }
