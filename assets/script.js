@@ -60,7 +60,7 @@ btnConfig.addEventListener("click", () => {
 
     }
   }
-// ===== CLIMA – OPEN-METEO =====
+// ===== CLIMA - OPEN-METEO (SEGURO) =====
 const weatherLoading = document.getElementById("weather-loading");
 const weatherContent = document.getElementById("weather-content");
 const weatherTemp = document.getElementById("weather-temp");
@@ -69,53 +69,45 @@ const weatherExtra = document.getElementById("weather-extra");
 const weatherUpdated = document.getElementById("weather-updated");
 
 if (
-  weatherLoading &&
-  weatherContent &&
-  weatherTemp &&
-  weatherDesc &&
-  weatherExtra &&
-  weatherUpdated
+    weatherLoading &&
+    weatherContent &&
+    weatherTemp &&
+    weatherDesc &&
+    weatherExtra &&
+    weatherUpdated
 ) {
-  // Coordenadas de Poços de Caldas
-  const latitude = -21.79;
-  const longitude = -46.56;
 
-  const urlClima = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=America%2FSao_Paulo`;
+    const latitude = -21.79;
+    const longitude = -46.56;
 
-  fetch(urlClima)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Erro na resposta da API");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      if (!data.current_weather) {
-        throw new Error("Dados de clima indisponíveis");
-      }
+    const urlClima = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=America/Sao_Paulo`;
 
-      const temp = data.current_weather.temperature; // ºC
-      const vento = data.current_weather.windspeed;  // km/h
-      const direcao = data.current_weather.winddirection; // graus
+    fetch(urlClima)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao consultar API");
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (!data.current_weather) {
+                throw new Error("Dados de clima indisponíveis");
+            }
 
-      weatherTemp.innerHTML = `${temp.toFixed(1)}<small>ºC</small>`;
-      weatherDesc.textContent = `Vento: ${vento.toFixed(
-        0
-      )} km/h · Direção: ${direcao.toFixed(0)}º`;
+            const temp = data.current_weather.temperature; 
+            const vento = data.current_weather.windspeed;
+            const direcao = data.current_weather.winddirection;
 
-      weatherExtra.textContent = "";
+            weatherLoading.style.display = "none";
+            weatherContent.style.display = "block";
 
-      const agora = new Date();
-      weatherUpdated.textContent = `Atualizado em ${agora.toLocaleString(
-        "pt-BR"
-      )}`;
-
-      weatherLoading.style.display = "none";
-      weatherContent.style.display = "block";
-    })
-    .catch((error) => {
-      console.error("Erro ao carregar clima:", error);
-      weatherLoading.textContent =
-        "Não foi possível carregar as informações de clima no momento. Tente novamente mais tarde.";
-    });
+            weatherTemp.innerHTML = `${temp}°C`;
+            weatherDesc.innerHTML = `Vento: ${vento} km/h • Direção: ${direcao.toFixed(0)}°`;
+            weatherExtra.innerHTML = `Código do clima: ${data.current_weather.weathercode}`;
+            weatherUpdated.innerHTML = `Atualizado agora`;
+        })
+        .catch(error => {
+            console.error("Erro ao carregar clima:", error);
+            weatherLoading.innerHTML = "Não foi possível carregar o clima no momento.";
+        });
 }
