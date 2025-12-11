@@ -60,16 +60,27 @@ btnConfig.addEventListener("click", () => {
 
     }
   }
-
 // ===== CLIMA – OPEN-METEO =====
-const climaStatus = document.getElementById("weather-loading");
+const weatherLoading = document.getElementById("weather-loading");
+const weatherContent = document.getElementById("weather-content");
+const weatherTemp = document.getElementById("weather-temp");
+const weatherDesc = document.getElementById("weather-desc");
+const weatherExtra = document.getElementById("weather-extra");
+const weatherUpdated = document.getElementById("weather-updated");
 
-if (climaStatus) {
-  // Coordenadas aproximadas de Poços de Caldas
+if (
+  weatherLoading &&
+  weatherContent &&
+  weatherTemp &&
+  weatherDesc &&
+  weatherExtra &&
+  weatherUpdated
+) {
+  // Coordenadas de Poços de Caldas
   const latitude = -21.79;
   const longitude = -46.56;
 
-  const urlClima = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=auto`;
+  const urlClima = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=America%2FSao_Paulo`;
 
   fetch(urlClima)
     .then((response) => {
@@ -83,17 +94,28 @@ if (climaStatus) {
         throw new Error("Dados de clima indisponíveis");
       }
 
-      const temp = data.current_weather.temperature; // °C
+      const temp = data.current_weather.temperature; // ºC
       const vento = data.current_weather.windspeed;  // km/h
       const direcao = data.current_weather.winddirection; // graus
 
-      climaStatus.textContent = `Temperatura: ${temp} ºC · Vento: ${vento} km/h · Direção: ${direcao.toFixed(
+      weatherTemp.innerHTML = `${temp.toFixed(1)}<small>ºC</small>`;
+      weatherDesc.textContent = `Vento: ${vento.toFixed(
         0
-      )}º`;
+      )} km/h · Direção: ${direcao.toFixed(0)}º`;
+
+      weatherExtra.textContent = "";
+
+      const agora = new Date();
+      weatherUpdated.textContent = `Atualizado em ${agora.toLocaleString(
+        "pt-BR"
+      )}`;
+
+      weatherLoading.style.display = "none";
+      weatherContent.style.display = "block";
     })
     .catch((error) => {
       console.error("Erro ao carregar clima:", error);
-      climaStatus.textContent =
+      weatherLoading.textContent =
         "Não foi possível carregar as informações de clima no momento. Tente novamente mais tarde.";
     });
 }
