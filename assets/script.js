@@ -35,29 +35,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ===== COOKIE BANNER =====
+    // =========================
+    //     COOKIE BANNER NOVO
+    // =========================
   const cookieBanner = document.getElementById("cookie-banner");
   const btnAccept = document.getElementById("cookie-accept");
   const btnConfig = document.getElementById("cookie-config");
 
-  if (cookieBanner && btnAccept) {
-    const accepted = localStorage.getItem("cookies_accepted_roteiros");
-
-    if (accepted === "yes") {
-      cookieBanner.style.display = "none";
+  // Mostrar banner apenas se ainda não aceitou
+  if (!localStorage.getItem("cookiesAccepted")) {
+    cookieBanner.classList.add("active");
     }
 
-    btnAccept.addEventListener("click", () => {
-      localStorage.setItem("cookies_accepted_roteiros", "yes");
-      cookieBanner.style.display = "none";
-    });
+// Botão ACEITAR
+btnAccept.addEventListener("click", () => {
+  localStorage.setItem("cookiesAccepted", "yes");
+  cookieBanner.classList.remove("active");
+});
 
-    if (btnConfig) {
-      btnConfig.addEventListener("click", () => {
-        alert(
-          "Em breve você poderá configurar suas preferências de cookies por aqui."
-        );
-      });
+// Botão CONFIGURAR (abre aviso)
+btnConfig.addEventListener("click", () => {
+  alert("Configurações de cookies estarão disponíveis em breve.");
+  });
+
     }
   }
 
