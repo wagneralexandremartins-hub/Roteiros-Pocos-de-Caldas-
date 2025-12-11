@@ -1,518 +1,592 @@
-/* =========================================
-   RESET E VARIÁVEIS GERAIS
-   ========================================= */
-
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --cor-primaria: #0b7285;
-  --cor-primaria-escura: #084c61;
-  --cor-secundaria: #22b8cf;
-  --cor-destaque: #ffb703;
-  --cor-fundo: #f5f5f5;
-  --cor-fundo-claro: #ffffff;
-  --cor-texto: #1f2933;
-  --cor-texto-suave: #4b5563;
-  --borda-radius: 14px;
-  --sombra-card: 0 8px 18px rgba(0, 0, 0, 0.08);
-}
-
-/* =========================================
-   BODY / ESTRUTURA
-   ========================================= */
-
 html,
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
-  background: radial-gradient(circle at top, #e9f5f7 0, #f5f5f5 55%, #ececec 100%);
-  color: var(--cor-texto);
-  line-height: 1.6;
+  height: 100%;
 }
 
-/* Centralização do conteúdo principal */
-main,
-body > div,
-body > section {
-  max-width: 1100px;
-  margin: 0 auto 3rem auto;
-  padding: 0 1.25rem;
+/* MARCA D'ÁGUA: PALACE HOTEL AO FUNDO */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #123145;
+  background-image: url("../img/vista-area-praca-pedro-sanches.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-/* =========================================
-   BARRA SUPERIOR (TELEFONE / WHATSAPP)
-   ========================================= */
+/* CAMADA CLARA SOBRE A IMAGEM DE FUNDO */
+.page-overlay {
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(2px);
+}
 
-/* Primeiro parágrafo do site: "Poços de Caldas – MG | ..." */
-body > p:first-of-type {
-  background: var(--cor-primaria-escura);
+/* CONTAINER PADRÃO */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* TOPO */
+.topbar {
+  background: rgba(3, 71, 89, 0.92);
   color: #ffffff;
-  text-align: center;
-  padding: 0.4rem 0.75rem;
-  font-size: 0.85rem;
+  font-size: 13px;
 }
 
-/* Links dentro da barra superior */
-body > p:first-of-type a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-body > p:first-of-type a:hover {
-  text-decoration: underline;
-}
-
-/* =========================================
-   TÍTULO PRINCIPAL / HERO
-   ========================================= */
-
-/* Título Roteiros Poços de Caldas */
-h1,
-h1#titulo-principal {
-  text-align: center;
-  font-size: clamp(2.3rem, 4vw, 3rem);
-  margin-top: 1.5rem;
-  margin-bottom: 0.25rem;
-  letter-spacing: 0.04em;
-  color: var(--cor-primaria-escura);
-}
-
-/* Subtítulo "Turismo, City Tour & Experiências" */
-h2:first-of-type {
-  text-align: center;
-  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
-  font-weight: 500;
-  color: var(--cor-texto-suave);
-  margin-bottom: 0.75rem;
-}
-
-/* =========================================
-   NAVEGAÇÃO (SOBRE / ROTEIROS / GALERIA / CONTATO)
-   ========================================= */
-
-nav,
-body nav {
+.topbar .container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 1rem auto 1.75rem;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 16px;
 }
 
-nav a,
-body nav a {
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  font-weight: 600;
-  color: var(--cor-primaria-escura);
-  padding-bottom: 0.15rem;
-  border-bottom: 2px solid transparent;
+/* CABEÇALHO / MENU */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
-nav a:hover,
-body nav a:hover {
-  border-bottom-color: var(--cor-secundaria);
-  color: var(--cor-secundaria);
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
 }
 
-/* =========================================
-   TIPOGRAFIA GERAL
-   ========================================= */
-
-h2 {
-  font-size: clamp(1.6rem, 2.7vw, 2rem);
-  margin: 2.4rem 0 0.75rem;
-  color: var(--cor-primaria-escura);
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-h3 {
-  font-size: 1.25rem;
-  margin: 1.4rem 0 0.4rem;
-  color: var(--cor-primaria-escura);
-}
-
-h4 {
-  font-size: 1.05rem;
-  margin: 0.2rem 0 0.4rem;
-  color: var(--cor-texto-suave);
-  font-weight: 600;
-}
-
-p {
-  margin-bottom: 0.75rem;
-  color: var(--cor-texto-suave);
-  font-size: 0.98rem;
-}
-
-/* Listas que o Manus às vezes gera em forma de texto corrido */
-ul {
-  margin: 0.5rem 0 0.75rem 1.2rem;
-}
-
-li {
-  margin-bottom: 0.3rem;
-}
-
-/* =========================================
-   LINKS / BOTÕES
-   ========================================= */
-
-a {
-  color: var(--cor-primaria-escura);
-  text-decoration: underline;
-}
-
-a:hover {
-  color: var(--cor-secundaria);
-}
-
-/* Botões principais do WhatsApp */
-a[href*="wa.me"] {
-  display: inline-flex;
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: #0b7285;
+  color: #fff;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
-  background: linear-gradient(135deg, #25d366, #128c7e);
-  color: #ffffff !important;
-  text-decoration: none;
-  padding: 0.65rem 1.3rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 6px 16px rgba(19, 116, 92, 0.32);
-  border: none;
-  margin: 0.4rem 0.35rem 0.6rem;
-  white-space: nowrap;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-a[href*="wa.me"]:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 22px rgba(19, 116, 92, 0.4);
-}
-
-/* Botão secundário (quando tiver link tipo "Ver roteiros disponíveis") */
-.btn-secundario {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  border: 1px solid var(--cor-primaria-escura);
-  color: var(--cor-primaria-escura);
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  margin: 0.4rem 0.35rem 0.6rem;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.btn-secundario:hover {
-  background: #ffffff;
-  border-color: var(--cor-secundaria);
-  color: var(--cor-secundaria);
-}
-
-/* =========================================
-   CARDS DOS ROTEIROS EM DESTAQUE
-   (City Tour, Mirantes, Dia Completo)
-   ========================================= */
-
-.section-roteiros,
-.roteiros-destaque {
-  margin-top: 1rem;
-}
-
-/* Agrupamento em grade dos roteiros (quando estiverem em blocos) */
-.roteiros-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-/* Card genérico */
-.card,
-.card-roteiro {
-  background: var(--cor-fundo-claro);
-  border-radius: var(--borda-radius);
-  box-shadow: var(--sombra-card);
-  padding: 1rem 1.1rem 1.2rem;
+.logo-text {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  font-size: 13px;
 }
 
-/* =========================================
-   IMAGENS – SEM CORTAR / PANORÂMICA
-   ========================================= */
-
-/* Estilo padrão para todas as imagens do site */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+.logo-text strong {
+  font-size: 15px;
+  color: #0b2f3a;
 }
 
-/* Remove qualquer altura fixa / aspecto “panorâmico” se tiver vindo do construtor */
-[class*="galeria"] img,
-[class*="Galeria"] img,
-[class*="gallery"] img,
-[class*="Gallery"] img,
-[class*="imagem"] img,
-[class*="Imagem"] img,
-[class*="foto"] img,
-[class*="Foto"] img,
-[class*="videos"] img,
-[class*="Videos"] img {
+/* NAVEGAÇÃO */
+.nav {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #0b2f3a;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #0b7285;
+  transition: width 0.2s ease-out;
+}
+
+.nav-link:hover::after {
   width: 100%;
-  height: auto !important;          /* SEM ALTURA FIXA */
-  max-height: none !important;
-  aspect-ratio: auto !important;    /* SEM forçar 21:9 ou parecido */
-  object-fit: contain !important;   /* Mostra a foto inteira */
 }
 
-/* Se as imagens estiverem dentro de figure */
-figure {
-  margin: 1.2rem 0;
+/* MENU MOBILE */
+.nav-toggle {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 22px;
 }
 
-figure img {
-  margin-bottom: 0.4rem;
+/* HERO */
+.hero {
+  padding: 40px 0 40px;
 }
 
-/* Legendas de imagens (como na galeria) */
-figure figcaption,
-img + p {
-  text-align: center;
-  font-size: 0.92rem;
-  color: var(--cor-texto-suave);
-  margin-top: 0.35rem;
+.hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: stretch;
 }
 
-/* =========================================
-   GALERIA – ORGANIZAÇÃO EM GRADE
-   ========================================= */
-
-/* Container da galeria de imagens */
-.section-galeria,
-.galeria-imagens,
-.galeria {
-  margin-top: 1rem;
+.hero-text {
+  flex: 1 1 320px;
 }
 
-/* Título "Galeria de Imagens" já será o h2, então aqui é a grade em si */
-.galeria-grid,
-.grade-galeria {
+.hero h1 {
+  font-size: 30px;
+  line-height: 1.3;
+  color: #0b2f3a;
+  margin-bottom: 12px;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.hero-badges {
+  list-style: none;
+  margin-bottom: 18px;
+}
+
+.hero-badges li {
+  font-size: 14px;
+  margin-bottom: 4px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.hero-badges li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: #0b7285;
+  font-size: 18px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.hero-note {
+  font-size: 13px;
+  color: #555;
+}
+
+/* CARD LATERAL DO HERO */
+.hero-card {
+  flex: 0 1 320px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.hero-card h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #0b2f3a;
+}
+
+.hero-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.hero-card ul {
+  font-size: 13px;
+  margin-bottom: 12px;
+  padding-left: 18px;
+}
+
+/* SEÇÕES GERAIS */
+.section {
+  padding: 36px 0;
+}
+
+.section-light {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.section-translucid {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.section h2 {
+  font-size: 24px;
+  color: #0b2f3a;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* GRID 2 COLUNAS */
+.grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
 }
 
-.galeria-item,
-.item-galeria {
-  background: var(--cor-fundo-claro);
-  border-radius: var(--borda-radius);
-  box-shadow: var(--sombra-card);
-  padding: 0.9rem;
+/* BLOCO SOBRE */
+.sobre-destaques {
+  background: rgba(11, 114, 133, 0.06);
+  border-radius: 18px;
+  padding: 18px 20px;
 }
 
-/* =========================================
-   CLIMA / INFORMAÇÕES RÁPIDAS
-   ========================================= */
-
-.section-clima {
-  margin-top: 1.5rem;
+.sobre-destaques h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
 }
 
-/* Widget de clima (quando substituir pelo código oficial) */
-.widget-clima,
-.clima-container {
-  background: var(--cor-fundo-claro);
-  border-radius: var(--borda-radius);
-  box-shadow: var(--sombra-card);
-  padding: 1rem;
-  margin: 0.6rem 0 1.2rem;
+.sobre-destaques ul {
+  list-style: none;
+  font-size: 14px;
 }
 
-/* Lista "Informações rápidas" */
-.info-rapidas,
-.info-roteiros {
+.sobre-destaques li {
+  margin-bottom: 6px;
+}
+
+/* BOTÕES */
+.btn,
+.btn-cookie {
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: #0b7285;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #095c6a;
+}
+
+.btn-secondary {
+  background: #f1f5f9;
+  color: #0b2f3a;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #0b7285;
+  border: 1px solid #0b7285;
+}
+
+.btn-outline:hover {
+  background: rgba(11, 114, 133, 0.08);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ROTEIROS */
+.roteiros-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 0.75rem;
-  margin-top: 0.6rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
 
-.info-rapidas p,
-.info-roteiros p {
-  background: rgba(11, 114, 133, 0.04);
-  border-left: 3px solid var(--cor-primaria);
-  padding: 0.5rem 0.7rem;
-  border-radius: 8px;
+.roteiro-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
 }
 
-/* =========================================
-   CONTATO / RODAPÉ
-   ========================================= */
+.roteiro-card h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
 
+.roteiro-local {
+  font-size: 13px;
+  color: #0b7285;
+  margin-bottom: 8px;
+}
+
+.roteiro-card p {
+  margin-bottom: 8px;
+}
+
+.roteiro-card ul {
+  font-size: 13px;
+  margin-bottom: 12px;
+  padding-left: 18px;
+}
+
+/* GALERIA */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.galeria-item {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-size: 13px;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.galeria-item figcaption {
+  padding: 8px 10px;
+}
+
+/* CLIMA & INFO */
+.clima-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 20px;
+}
+
+.clima-box,
+.info-box {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px;
+  padding: 16px 18px;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.info-box ul {
+  list-style: none;
+}
+
+.info-box li {
+  margin-bottom: 6px;
+}
+
+/* CONTATO */
 .section-contato {
-  margin-top: 2.2rem;
+  padding-bottom: 30px;
 }
 
-.section-contato p {
-  margin-bottom: 0.35rem;
+.contato-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
-/* “Chamar no WhatsApp” no contato já pega o estilo do botão principal */
+.contato-lista {
+  list-style: none;
+  font-size: 14px;
+  margin: 10px 0 12px;
+}
 
-/* Rodapé simples */
-footer,
-body > footer {
+.contato-lista li {
+  margin-bottom: 4px;
+}
+
+.contato-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contato-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #0b2f3a;
+}
+
+.contato-form input,
+.contato-form textarea {
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+}
+
+/* MAPA PLACEHOLDER */
+.mapa-wrapper h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.mapa-placeholder {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  padding: 18px;
   text-align: center;
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin: 2rem auto 0.5rem;
+  font-size: 14px;
+  color: #444;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* =========================================
-   COOKIE BANNER (CASO VOCÊ TENHA UM <div class="cookie-banner">)
-   ========================================= */
+/* RODAPÉ */
+.footer {
+  background: rgba(3, 71, 89, 0.94);
+  color: #ffffff;
+  font-size: 13px;
+  padding: 12px 0;
+}
 
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.footer-extra {
+  opacity: 0.85;
+}
+
+/* COOKIE BANNER */
 .cookie-banner {
   position: fixed;
-  inset-inline: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  background: rgba(8, 76, 97, 0.98);
-  color: #ffffff;
-  padding: 0.75rem 1rem;
+  background: rgba(15, 23, 42, 0.96);
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 13px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem 1rem;
-  z-index: 9999;
-  font-size: 0.85rem;
+  gap: 10px;
+  z-index: 50;
 }
 
 .cookie-banner p {
-  margin: 0;
-  max-width: 520px;
-  color: #e5f6fb;
+  flex: 1 1 220px;
 }
 
-.cookie-banner button,
-.cookie-banner a {
-  border: none;
-  border-radius: 999px;
-  padding: 0.45rem 1rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  white-space: nowrap;
+.cookie-actions {
+  display: flex;
+  gap: 8px;
 }
 
-.cookie-banner .btn-cookie-aceitar {
-  background: var(--cor-destaque);
-  color: #1f2933;
+.btn-cookie.btn-primary {
+  background: #16a34a;
+  color: #fff;
 }
 
-.cookie-banner .btn-cookie-config {
+.btn-cookie.btn-outline {
   background: transparent;
-  border: 1px solid #e5f6fb;
-  color: #ffffff;
+  color: #e5e7eb;
+  border: 1px solid #e5e7eb;
 }
 
-/* =========================================
-   RESPONSIVIDADE
-   ========================================= */
-
-@media (min-width: 768px) {
-  main,
-  body > div,
-  body > section {
-    padding: 0 1.5rem 3rem;
-  }
-
-  /* Roteiros em 3 colunas no desktop caso use a .roteiros-grid */
-  .roteiros-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Ajuste mais fino no desktop grande */
-@media (min-width: 1024px) {
-  .galeria-grid,
-  .grade-galeria {
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas na galeria */
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  body > p:first-of-type {
-    font-size: 0.78rem;
-    padding-inline: 0.4rem;
-  }
-
-  nav,
-  body nav {
-    gap: 0.8rem;
-  }
-
-  nav a,
-  body nav a {
-    font-size: 0.82rem;
-  }
-
-  a[href*="wa.me"],
-  .btn-secundario {
-    width: 100%;
-    justify-content: center;
-  }
-
-  img {
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 54px;
+    background: #fff;
+    padding: 10px 14px;
     border-radius: 12px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+    flex-direction: column;
+  }
+
+  .nav-link {
+    padding: 4px 0;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hero-inner,
+  .grid-2,
+  .roteiros-grid,
+  .galeria-grid,
+  .clima-grid,
+  .contato-grid {
+    grid-template-columns: minmax(0, 1fr);
+    display: grid;
+  }
+
+  .roteiros-grid,
+  .galeria-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .topbar .container {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .cookie-banner {
-    justify-content: flex-start;
-    padding-inline: 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
   }
-   /* ==============================
-   AJUSTE PARA REDUZIR O TAMANHO DAS IMAGENS
-   ============================== */
-
-/* Limita a largura máxima das imagens */
-img {
-  width: 100%;
-  max-width: 420px;   /* ajuste principal – diminui as imagens */
-  height: auto;
-  margin: 0 auto;     /* centraliza */
-  display: block;
 }
 
-/* Deixa a galeria mais compacta */
-.galeria-grid,
-.grade-galeria {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-  gap: 1rem !important;
-}
-
-/* Para mobile manter bom tamanho */
 @media (max-width: 600px) {
-  img {
-    max-width: 100%;
+  .hero {
+    padding-top: 24px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero-card {
+    margin-top: 10px;
+  }
+
+  .galeria-item img {
+    height: 180px;
   }
 }
-
