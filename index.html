@@ -6,27 +6,31 @@
   <title>Site em Manutenção</title>
 
   <style>
-    /* Fundo ocupando toda a tela */
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       height: 100vh;
+      width: 100vw;
+      font-family: Arial, Helvetica, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
-      color: #fff;
       text-align: center;
+      color: #fff;
 
-      /* IMAGEM DE FUNDO */
-      background-image: url("assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg");
+      /* FUNDO DO PALACE HOTEL */
+      background-image: url("assets/img/vista-area-praca-pedro-sanches.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       position: relative;
     }
 
-    /* Camada escura para melhorar visual do texto */
+    /* Camada escura levemente transparente */
     body::before {
       content: "";
       position: absolute;
@@ -38,20 +42,19 @@
     .conteudo {
       position: relative;
       z-index: 2;
-      max-width: 600px;
+      max-width: 650px;
       padding: 20px;
     }
 
     h1 {
-      font-size: 2.6rem;
-      margin-bottom: 1.2rem;
-      font-weight: bold;
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
     }
 
     p {
       font-size: 1.2rem;
-      line-height: 1.6rem;
       margin-bottom: 2rem;
+      line-height: 1.7rem;
     }
 
     /* Botão WhatsApp */
@@ -59,23 +62,22 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 28px;
-      background: #25d366;
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-radius: 50px;
       text-decoration: none;
-      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.4);
-      transition: 0.3s;
+      background-color: #25d366;
+      padding: 14px 30px;
+      border-radius: 50px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+      transition: 0.3s ease;
     }
 
     .btn-whats:hover {
-      background: #1ebd5a;
+      background-color: #1ebd5a;
       transform: translateY(-3px);
     }
 
-    /* Ícone */
     .btn-whats img {
       width: 26px;
       margin-right: 10px;
@@ -87,13 +89,12 @@
   <div class="conteudo">
     <h1>Estamos em Manutenção</h1>
     <p>
-      Estamos realizando melhorias no site para oferecer a melhor experiência.<br />
-      Voltaremos em breve!
+      Estamos realizando melhorias para oferecer uma experiência ainda melhor.<br>
+      O site voltará em breve!
     </p>
 
-    <!-- Botão WhatsApp -->
     <a class="btn-whats" href="https://wa.me/5535988951441" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
       Falar no WhatsApp
     </a>
   </div>
