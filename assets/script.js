@@ -1,57 +1,59 @@
-// Ano automático no rodapé
-const anoSpan = document.getElementById("ano-atual");
-if (anoSpan) {
-  anoSpan.textContent = new Date().getFullYear();
-}
-
-// Banner de cookies
+// MENU MOBILE
 document.addEventListener("DOMContentLoaded", function () {
-  const banner = document.querySelector(".cookie-banner");
-  const botaoAceitar = document.querySelector("[data-cookie-accept]");
-  const botaoConfig = document.querySelector("[data-cookie-config]");
-  const STORAGE_KEY = "cookies_roteiros_pocos";
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
 
-  if (!banner) return;
-
-  // Se já aceitou antes, não mostra o banner
-  const jaAceitou = localStorage.getItem(STORAGE_KEY);
-  if (jaAceitou === "aceito") {
-    banner.style.display = "none";
-    return;
-  }
-
-  // Clique em "Aceitar"
-  if (botaoAceitar) {
-    botaoAceitar.addEventListener("click", function () {
-      localStorage.setItem(STORAGE_KEY, "aceito");
-      banner.style.display = "none";
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const visible = nav.style.display === "flex";
+      nav.style.display = visible ? "none" : "flex";
     });
   }
 
-  // Clique em "Configurar"
-  if (botaoConfig) {
-    botaoConfig.addEventListener("click", function () {
-      alert("Em breve: painel de configuração de cookies.");
+  // ROLAGEM SUAVE PARA LINKS DO MENU
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: "smooth",
+        });
+
+        // Fecha menu no mobile
+        if (window.innerWidth <= 900 && nav) {
+          nav.style.display = "none";
+        }
+      }
     });
-  }
-});
-    // ==============================
-// Carrossel simples de imagens
-// ==============================
-document.addEventListener("DOMContentLoaded", function () {
-  const carousels = document.querySelectorAll(".simple-carousel");
-
-  carousels.forEach((carousel) => {
-    const slides = carousel.querySelectorAll("img");
-    if (slides.length <= 1) return;
-
-    let index = 0;
-    slides[index].classList.add("is-active");
-
-    setInterval(() => {
-      slides[index].classList.remove("is-active");
-      index = (index + 1) % slides.length;
-      slides[index].classList.add("is-active");
-    }, 5000); // 5 segundos por imagem
   });
+
+  // COOKIE BANNER
+  const cookieBanner = document.getElementById("cookie-banner");
+  const btnAccept = document.getElementById("cookie-accept");
+  const btnConfig = document.getElementById("cookie-config");
+
+  if (cookieBanner && btnAccept) {
+    const accepted = localStorage.getItem("cookies_accepted");
+
+    if (accepted === "yes") {
+      cookieBanner.style.display = "none";
+    }
+
+    btnAccept.addEventListener("click", () => {
+      localStorage.setItem("cookies_accepted", "yes");
+      cookieBanner.style.display = "none";
+    });
+
+    if (btnConfig) {
+      btnConfig.addEventListener("click", () => {
+        alert(
+          "Em breve você poderá configurar suas preferências de cookies por aqui."
+        );
+      });
+    }
+  }
 });
