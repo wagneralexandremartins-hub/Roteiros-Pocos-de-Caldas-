@@ -62,7 +62,7 @@ btnConfig.addEventListener("click", () => {
   }
 
 // ===== CLIMA – OPEN-METEO =====
-const climaStatus = document.getElementById("clima-status");
+const climaStatus = document.getElementById("weather-loading");
 
 if (climaStatus) {
   // Coordenadas aproximadas de Poços de Caldas
