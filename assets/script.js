@@ -60,54 +60,55 @@ btnConfig.addEventListener("click", () => {
 
     }
   }
-// ===== CLIMA - OPEN-METEO (SEGURO) =====
-const weatherLoading = document.getElementById("weather-loading");
-const weatherContent = document.getElementById("weather-content");
-const weatherTemp = document.getElementById("weather-temp");
-const weatherDesc = document.getElementById("weather-desc");
-const weatherExtra = document.getElementById("weather-extra");
-const weatherUpdated = document.getElementById("weather-updated");
+          // ===== CLIMA – OPEN-METEO =====
+(function () {
+  const loadingEl  = document.getElementById("weather-loading");
+  const contentEl  = document.getElementById("weather-content");
+  const tempEl     = document.getElementById("weather-temp");
+  const descEl     = document.getElementById("weather-desc");
+  const extraEl    = document.getElementById("weather-extra");
+  const updatedEl  = document.getElementById("weather-updated");
 
-if (
-    weatherLoading &&
-    weatherContent &&
-    weatherTemp &&
-    weatherDesc &&
-    weatherExtra &&
-    weatherUpdated
-) {
+  // Se não achar os elementos, não faz nada (evita erro)
+  if (!loadingEl || !contentEl || !tempEl || !descEl || !extraEl || !updatedEl) {
+    console.warn("Bloco de clima não encontrado no DOM.");
+    return;
+  }
 
-    const latitude = -21.79;
-    const longitude = -46.56;
+  // Coordenadas de Poços de Caldas
+  const latitude  = -21.79;
+  const longitude = -46.56;
 
-    const urlClima = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=America/Sao_Paulo`;
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=auto`;
 
-    fetch(urlClima)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erro ao consultar API");
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (!data.current_weather) {
-                throw new Error("Dados de clima indisponíveis");
-            }
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erro na resposta da API");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (!data.current_weather) {
+        throw new Error("Dados de clima indisponíveis");
+      }
 
-            const temp = data.current_weather.temperature; 
-            const vento = data.current_weather.windspeed;
-            const direcao = data.current_weather.winddirection;
+      const temp = data.current_weather.temperature;
+      const wind = data.current_weather.windspeed;
+      const dir  = data.current_weather.winddirection;
 
-            weatherLoading.style.display = "none";
-            weatherContent.style.display = "block";
+      // Esconde o "Carregando..." e mostra os dados
+      loadingEl.style.display = "none";
+      contentEl.style.display = "block";
 
-            weatherTemp.innerHTML = `${temp}°C`;
-            weatherDesc.innerHTML = `Vento: ${vento} km/h • Direção: ${direcao.toFixed(0)}°`;
-            weatherExtra.innerHTML = `Código do clima: ${data.current_weather.weathercode}`;
-            weatherUpdated.innerHTML = `Atualizado agora`;
-        })
-        .catch(error => {
-            console.error("Erro ao carregar clima:", error);
-            weatherLoading.innerHTML = "Não foi possível carregar o clima no momento.";
-        });
-}
+      tempEl.innerHTML = `${temp.toFixed(1)}<small>°C</small>`;
+      descEl.textContent  = `Vento: ${wind.toFixed(0)} km/h · Direção: ${dir.toFixed(0)}°`;
+      extraEl.textContent = `Fonte: Open-Meteo · Código do tempo: ${data.current_weather.weathercode}`;
+      updatedEl.textContent = `Última atualização: ${new Date().toLocaleString("pt-BR")}`;
+    })
+    .catch((error) => {
+      console.error("Erro ao carregar clima:", error);
+      loadingEl.textContent =
+        "Não foi possível carregar as informações de clima no momento. Tente novamente mais tarde.";
+    });
+})();
