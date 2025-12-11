@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Roteiros Poços de Caldas – Site em Manutenção</title>
+    <title>Roteiros Poços de Caldas – City Tour, Passeios & Experiências</title>
 
     <meta
       name="description"
-      content="Roteiros Poços de Caldas – Estamos realizando melhorias para oferecer uma experiência ainda melhor. Fale conosco pelo WhatsApp e agende seu passeio."
+      content="Roteiros Poços de Caldas – City tour, teleférico, Cristo Redentor, mirantes, recanto japonês, cascata Véu das Noivas e experiências completas com guia especializado."
     />
     <meta
       name="keywords"
-      content="roteiros poços de caldas, city tour poços de caldas, excursões poços de caldas, turismo poços de caldas, guia turístico poços de caldas"
+      content="roteiros poços de caldas, city tour poços de caldas, palace hotel, cristo redentor poços, teleférico poços de caldas, recanto japonês, véu das noivas, turismo em poços"
     />
     <meta name="author" content="Roteiros Poços de Caldas" />
 
@@ -23,496 +23,457 @@
       rel="stylesheet"
     />
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        height: 100%;
-      }
-
-      body {
-        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        color: #ffffff;
-        background:
-          linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9)),
-          url("assets/img/vista-area-praca-pedro-sanches.jpg") center center /
-            cover fixed no-repeat;
-      }
-
-      .overlay {
-        min-height: 100vh;
-        padding: 32px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .container {
-        width: 100%;
-        max-width: 1100px;
-      }
-
-      .card {
-        background: rgba(0, 0, 0, 0.72);
-        border-radius: 18px;
-        padding: 28px 24px;
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
-        backdrop-filter: blur(6px);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-      }
-
-      /* HERO (mensagem de manutenção) */
-
-      .hero-card {
-        text-align: center;
-        margin-bottom: 24px;
-      }
-
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 13px;
-        padding: 6px 14px;
-        border-radius: 999px;
-        background: rgba(16, 185, 129, 0.12);
-        color: #a7f3d0;
-        border: 1px solid rgba(16, 185, 129, 0.6);
-        margin-bottom: 14px;
-      }
-
-      .badge-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: #22c55e;
-        box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
-      }
-
-      .hero-title {
-        font-size: clamp(28px, 3.1vw, 34px);
-        line-height: 1.2;
-        margin-bottom: 12px;
-        font-weight: 700;
-        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
-      }
-
-      .hero-subtitle {
-        font-size: 15px;
-        line-height: 1.6;
-        max-width: 520px;
-        margin: 0 auto 18px;
-        color: #e5e5e5;
-      }
-
-      .hero-note {
-        font-size: 13px;
-        color: #cbd5f5;
-        margin-bottom: 22px;
-      }
-
-      .hero-note strong {
-        color: #facc15;
-        font-weight: 600;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        margin-bottom: 12px;
-      }
-
-      .btn-whatsapp {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        background: #22c55e;
-        color: #022c22;
-        border-radius: 999px;
-        padding: 12px 26px;
-        font-size: 15px;
-        font-weight: 600;
-        border: none;
-        text-decoration: none;
-        cursor: pointer;
-        box-shadow: 0 14px 35px rgba(34, 197, 94, 0.45);
-        transition: transform 0.18s ease, box-shadow 0.18s ease,
-          background 0.18s ease;
-      }
-
-      .btn-whatsapp span.icon {
-        font-size: 18px;
-      }
-
-      .btn-whatsapp:hover {
-        background: #16a34a;
-        transform: translateY(-2px);
-        box-shadow: 0 18px 40px rgba(22, 163, 74, 0.6);
-      }
-
-      .btn-outline {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border-radius: 999px;
-        padding: 11px 22px;
-        font-size: 14px;
-        font-weight: 500;
-        border: 1px solid rgba(148, 163, 184, 0.9);
-        color: #e5e7eb;
-        background: rgba(15, 23, 42, 0.4);
-        text-decoration: none;
-        cursor: pointer;
-        transition: background 0.18s ease, color 0.18s ease,
-          border-color 0.18s ease, transform 0.18s ease;
-      }
-
-      .btn-outline:hover {
-        background: rgba(15, 23, 42, 0.8);
-        transform: translateY(-1px);
-      }
-
-      .hero-extra {
-        font-size: 12px;
-        color: #9ca3af;
-      }
-
-      /* GRID CLIMA + MAPA */
-
-      .info-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-        gap: 18px;
-      }
-
-      .info-title {
-        font-size: 18px;
-        margin-bottom: 8px;
-        font-weight: 600;
-      }
-
-      .info-subtitle {
-        font-size: 13px;
-        margin-bottom: 16px;
-        color: #d1d5db;
-      }
-
-      /* CLIMA */
-
-      .weather-main {
-        display: flex;
-        align-items: baseline;
-        gap: 8px;
-        margin-bottom: 6px;
-      }
-
-      .weather-temp {
-        font-size: 32px;
-        font-weight: 700;
-      }
-
-      .weather-temp small {
-        font-size: 16px;
-        opacity: 0.85;
-      }
-
-      .weather-desc {
-        font-size: 14px;
-        color: #e5e7eb;
-      }
-
-      .weather-extra {
-        margin-top: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        font-size: 12px;
-        color: #cbd5f5;
-      }
-
-      .weather-extra span {
-        padding: 4px 8px;
-        border-radius: 999px;
-        background: rgba(15, 23, 42, 0.65);
-        border: 1px solid rgba(148, 163, 184, 0.5);
-      }
-
-      .weather-footer {
-        margin-top: 12px;
-        font-size: 11px;
-        color: #9ca3af;
-      }
-
-      /* MAPA */
-
-      .map-wrapper {
-        border-radius: 14px;
-        overflow: hidden;
-        border: 1px solid rgba(148, 163, 184, 0.6);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      .map-wrapper iframe {
-        display: block;
-        width: 100%;
-        height: 280px;
-      }
-
-      .map-footer {
-        margin-top: 10px;
-        font-size: 12px;
-        color: #d1d5db;
-      }
-
-      footer {
-        margin-top: 18px;
-        text-align: center;
-        font-size: 11px;
-        color: #9ca3af;
-      }
-
-      footer strong {
-        color: #e5e7eb;
-      }
-
-      /* RESPONSIVO */
-
-      @media (max-width: 900px) {
-        .info-grid {
-          grid-template-columns: minmax(0, 1fr);
-        }
-
-        .card {
-          padding: 22px 18px;
-        }
-      }
-
-      @media (max-width: 600px) {
-        .overlay {
-          padding: 18px 10px 28px;
-        }
-
-        .hero-title {
-          font-size: 24px;
-        }
-
-        .hero-subtitle {
-          font-size: 14px;
-        }
-
-        .weather-temp {
-          font-size: 28px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
-    <div class="overlay">
-      <main class="container">
-        <!-- BLOCO PRINCIPAL: MANUTENÇÃO -->
-        <section class="card hero-card">
-          <div class="badge">
-            <span class="badge-dot"></span>
-            <span>Roteiros Poços de Caldas</span>
-          </div>
+    <!-- CAMADA SOBRE A MARCA D’ÁGUA -->
+    <div class="page-overlay">
+      <!-- TOPO -->
+      <div class="topbar">
+        <div class="container">
+          <span>Poços de Caldas – MG</span>
+          <span>Telefone: (35) 3014-0962</span>
+          <span>WhatsApp: (35) 9 8895-1441</span>
+        </div>
+      </div>
 
-          <h1 class="hero-title">Estamos em Manutenção</h1>
-
-          <p class="hero-subtitle">
-            Estamos realizando melhorias para oferecer uma experiência ainda
-            melhor nos roteiros de Poços de Caldas. Enquanto isso, você pode
-            falar direto com o guia pelo WhatsApp.
-          </p>
-
-          <p class="hero-note">
-            <strong>O site voltará em breve</strong> com mais fotos, vídeos,
-            roteiros atualizados e novos recursos.
-          </p>
-
-          <div class="hero-actions">
-            <a
-              class="btn-whatsapp"
-              href="https://wa.me/5535988951441?text=Ol%C3%A1!%20Vim%20pelo%20site%20Roteiros%20Po%C3%A7os%20de%20Caldas%20e%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20passeios."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="icon">💬</span>
-              <span>Falar no WhatsApp</span>
-            </a>
-
-            <a
-              class="btn-outline"
-              href="tel:+5535350140962"
-              aria-label="Ligar para Roteiros Poços de Caldas"
-            >
-              ☎️ Ligar (35) 3014-0962
-            </a>
-          </div>
-
-          <p class="hero-extra">
-            Atendimento para excursões, grupos fechados, famílias e agências
-            parceiras.
-          </p>
-        </section>
-
-        <!-- BLOCO SECUNDÁRIO: CLIMA + MAPA -->
-        <section class="info-grid">
-          <!-- CLIMA -->
-          <article class="card">
-            <h2 class="info-title">Clima agora em Poços de Caldas</h2>
-            <p class="info-subtitle">
-              Temperatura e condições em tempo quase real, atualizadas
-              automaticamente.
-            </p>
-
-            <div id="weather-loading" class="weather-desc">
-              Carregando informações do clima...
+      <!-- CABEÇALHO -->
+      <header class="site-header">
+        <div class="container header-inner">
+          <div class="logo">
+            <div class="logo-icon">PC</div>
+            <div class="logo-text">
+              <strong>Roteiros Poços de Caldas</strong>
+              <span>Turismo, City Tour &amp; Experiências</span>
             </div>
+          </div>
 
-            <div id="weather-content" style="display: none">
-              <div class="weather-main">
-                <div class="weather-temp" id="weather-temp">
-                  --<small>°C</small>
-                </div>
-                <div class="weather-desc" id="weather-desc">--</div>
+          <nav class="nav">
+            <a href="#inicio" class="nav-link">Início</a>
+            <a href="#sobre" class="nav-link">Sobre</a>
+            <a href="#roteiros" class="nav-link">Roteiros</a>
+            <a href="#galeria" class="nav-link">Galeria</a>
+            <a href="#clima-mapa" class="nav-link">Clima &amp; Mapa</a>
+            <a href="#contato" class="nav-link">Contato</a>
+          </nav>
+
+          <button class="nav-toggle" aria-label="Abrir menu">
+            ☰
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <!-- HERO -->
+        <section id="inicio" class="hero">
+          <div class="container hero-inner">
+            <div class="hero-text">
+              <p class="badge">
+                <span class="badge-dot"></span>
+                Roteiros Poços de Caldas
+              </p>
+
+              <h1>Conheça Poços de Caldas com quem entende de roteiro</h1>
+
+              <p class="hero-subtitle">
+                City tour, teleférico, Cristo Redentor, mirantes, recantos e
+                experiências completas, com guia especializado e aquele
+                atendimento mineiro de verdade.
+              </p>
+
+              <ul class="hero-badges">
+                <li>Roteiros para 1 dia, fim de semana ou feriados prolongados</li>
+                <li>Atendimento para grupos, famílias e terceira idade</li>
+                <li>Guias experientes e roteiros flexíveis</li>
+              </ul>
+
+              <div class="hero-actions">
+                <a
+                  href="https://wa.me/5535988951441?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20os%20roteiros%20em%20Po%C3%A7os%20de%20Caldas."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary"
+                >
+                  💬 Reservar pelo WhatsApp
+                </a>
+                <a href="#roteiros" class="btn btn-outline">
+                  Ver roteiros disponíveis
+                </a>
               </div>
 
-              <div class="weather-extra" id="weather-extra"></div>
-
-              <p class="weather-footer" id="weather-updated"></p>
-            </div>
-          </article>
-
-          <!-- MAPA -->
-          <article class="card">
-            <h2 class="info-title">Onde estamos</h2>
-            <p class="info-subtitle">
-              Poços de Caldas – MG · Região central e principais pontos
-              turísticos.
-            </p>
-
-            <div class="map-wrapper">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237053.89983260044!2d-46.54477145!3d-21.82019875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c9c2c32e5a151b%3A0x90c78773874589fc!2sPo%C3%A7os%20de%20Caldas%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1741794268979!5m2!1spt-BR!2sbr"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+              <p class="hero-note">
+                Saídas a partir da região central de Poços de Caldas, com
+                horários combinados conforme o seu grupo.
+              </p>
             </div>
 
-            <p class="map-footer">
-              Ponto de saída principal: região central de Poços de Caldas
-              (Praça Pedro Sanches e arredores). Consulte pelo WhatsApp para
-              combinar local exato de embarque do seu grupo.
-            </p>
-          </article>
+            <aside class="hero-card">
+              <h2>City Tour Clássico</h2>
+              <p>
+                Teleférico, Cristo Redentor, Praça Pedro Sanches, Recanto
+                Japonês e outros cartões-postais em um roteiro completo.
+              </p>
+              <ul>
+                <li>Duração média: 3 a 4 horas</li>
+                <li>Paradas para fotos, mirantes e contemplação</li>
+                <li>Explicações históricas, curiosidades e dicas locais</li>
+              </ul>
+              <a
+                href="https://wa.me/5535988951441?text=Quero+informações+sobre+o+City+Tour+Clássico"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary btn-full"
+              >
+                Quero este roteiro
+              </a>
+              <p class="hero-card-note">
+                Ideal para quem está vindo pela primeira vez ou quer revisitar
+                os principais pontos de Poços de Caldas.
+              </p>
+            </aside>
+          </div>
         </section>
 
-        <footer>
-          © 2025 <strong>Roteiros Poços de Caldas</strong> – Todos os direitos
-          reservados. Turismo, City Tour & Experiências em Poços de Caldas – MG.
-        </footer>
+        <!-- SOBRE -->
+        <section id="sobre" class="section section-light">
+          <div class="container grid-2">
+            <div>
+              <h2>Sobre os Roteiros Poços de Caldas</h2>
+              <p>
+                Nosso objetivo é que você conheça Poços de Caldas com
+                tranquilidade, segurança e encantamento. Os roteiros são
+                planejados para aproveitar bem o tempo, com paradas para fotos,
+                contemplação e momentos especiais.
+              </p>
+              <p>
+                Atendemos grupos de excursão, famílias, casais e terceira idade,
+                com opções de passeios de meio período, dia completo e roteiros
+                personalizados conforme o perfil do grupo.
+              </p>
+              <p>
+                Trabalhamos com guias experientes, veículos parceiros e
+                roteiros flexíveis, sempre ajustando o passeio às condições do
+                dia e ao interesse dos visitantes.
+              </p>
+            </div>
+
+            <div class="sobre-destaques">
+              <h3>Por que escolher nossos roteiros?</h3>
+              <ul>
+                <li>✔ Conhecimento local e atenção aos detalhes.</li>
+                <li>✔ Roteiros pensados para fotografia e contemplação.</li>
+                <li>✔ Sugestões de restaurantes, cafés e pontos de apoio.</li>
+                <li>✔ Cuidado especial com grupos da melhor idade.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ROTEIROS EM DESTAQUE -->
+        <section id="roteiros" class="section section-translucid">
+          <div class="container">
+            <h2>Roteiros em Destaque</h2>
+            <p class="section-subtitle">
+              Alguns dos roteiros mais procurados em Poços de Caldas. Entre em
+              contato para adaptar ao seu grupo.
+            </p>
+
+            <div class="roteiros-grid">
+              <!-- CARD 1 -->
+              <article class="roteiro-card">
+                <h3>City Tour Clássico</h3>
+                <p class="roteiro-local">
+                  Praça Pedro Sanches, Teleférico &amp; Cristo Redentor
+                </p>
+                <p>
+                  Passeio completo pelos principais cartões-postais do centro de
+                  Poços de Caldas, com subida de teleférico e visita ao Cristo
+                  Redentor.
+                </p>
+                <ul>
+                  <li>Duração: 3 a 4 horas</li>
+                  <li>Nível de esforço: leve</li>
+                  <li>Ideal para famílias, casais e terceira idade</li>
+                </ul>
+                <a
+                  href="https://wa.me/5535988951441?text=Tenho+interesse+no+City+Tour+Clássico"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary btn-full"
+                >
+                  Solicitar orçamento
+                </a>
+              </article>
+
+              <!-- CARD 2 -->
+              <article class="roteiro-card">
+                <h3>Mirantes &amp; Pôr do Sol</h3>
+                <p class="roteiro-local">
+                  Mirante de Santa Rita, Cristo &amp; Serra
+                </p>
+                <p>
+                  Roteiro focado em paisagens e mirantes, perfeito para fotos e
+                  registros do pôr do sol em dias de boa visibilidade.
+                </p>
+                <ul>
+                  <li>Duração: 2 a 3 horas</li>
+                  <li>Nível de esforço: leve</li>
+                  <li>Ideal para casais, grupos de amigos e fotógrafos</li>
+                </ul>
+                <a
+                  href="https://wa.me/5535988951441?text=Quero+informações+sobre+o+roteiro+Mirantes+%26+Pôr+do+Sol"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary btn-full"
+                >
+                  Solicitar orçamento
+                </a>
+              </article>
+
+              <!-- CARD 3 -->
+              <article class="roteiro-card">
+                <h3>Dia Completo em Poços</h3>
+                <p class="roteiro-local">
+                  Centro, Recanto Japonês &amp; Cascata Véu das Noivas
+                </p>
+                <p>
+                  Roteiro para quem deseja um dia inteiro de experiências,
+                  passando por pontos históricos, natureza e recantos especiais.
+                </p>
+                <ul>
+                  <li>Duração: 6 a 8 horas</li>
+                  <li>Inclui parada para almoço (combinar previamente)</li>
+                  <li>Ideal para excursões e grupos fechados</li>
+                </ul>
+                <a
+                  href="https://wa.me/5535988951441?text=Gostaria+de+informações+sobre+o+Dia+Completo+em+Poços"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary btn-full"
+                >
+                  Solicitar orçamento
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- GALERIA -->
+        <section id="galeria" class="section section-light">
+          <div class="container">
+            <h2>Galeria de Imagens</h2>
+            <p class="section-subtitle">
+              Um pouco dos cenários que você vai conhecer nos roteiros em
+              Poços de Caldas.
+            </p>
+
+            <div class="galeria-grid">
+              <figure class="galeria-item">
+                <img
+                  src="assets/img/por-do-sol-no-cristo-redentor-natal.jpg"
+                  alt="Pôr do Sol no Cristo Redentor em Poços de Caldas"
+                />
+                <figcaption>Pôr do Sol – Cristo Redentor</figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <img
+                  src="assets/img/parque-do-cristo-mirante-pocos-de-caldas.jpg"
+                  alt="Cristo Redentor e mirante em Poços de Caldas"
+                />
+                <figcaption>Cristo Redentor &amp; Mirante</figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <img
+                  src="assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg"
+                  alt="Vista aérea de Poços de Caldas pelo teleférico"
+                />
+                <figcaption>Teleférico – Vista da cidade</figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <img
+                  src="assets/img/recanto-japones-pocos-de-caldas-entrada.jpg"
+                  alt="Recanto Japonês em Poços de Caldas"
+                />
+                <figcaption>Recanto Japonês</figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <img
+                  src="assets/img/cascata-veu-das-noivas.jpg"
+                  alt="Cascata Véu das Noivas em Poços de Caldas"
+                />
+                <figcaption>Cascata Véu das Noivas</figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <img
+                  src="assets/img/guia-paulo-rogerio-pocos-de-caldas-turistas.jpg"
+                  alt="Grupo de turistas em Poços de Caldas com guia"
+                />
+                <figcaption>Grupos &amp; Excursões</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- CLIMA + MAPA -->
+        <section
+          id="clima-mapa"
+          class="section section-translucid section-clima-mapa"
+        >
+          <div class="container clima-grid">
+            <!-- CLIMA -->
+            <article class="clima-box">
+              <h2>Clima agora em Poços de Caldas</h2>
+              <p class="section-subtitle">
+                Temperatura e condições em tempo quase real, atualizadas
+                automaticamente.
+              </p>
+
+              <div id="weather-loading" class="weather-desc">
+                Carregando informações do clima...
+              </div>
+
+              <div id="weather-content" style="display: none">
+                <div class="weather-main">
+                  <div class="weather-temp" id="weather-temp">
+                    --<small>°C</small>
+                  </div>
+                  <div class="weather-desc" id="weather-desc">--</div>
+                </div>
+
+                <div class="weather-extra" id="weather-extra"></div>
+
+                <p class="weather-footer" id="weather-updated"></p>
+              </div>
+            </article>
+
+            <!-- MAPA -->
+            <article class="info-box">
+              <h2>Onde estamos</h2>
+              <p class="section-subtitle">
+                Poços de Caldas – MG · Região central e principais pontos
+                turísticos.
+              </p>
+
+              <div class="mapa-wrapper">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237053.89983260044!2d-46.54477145!3d-21.82019875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c9c2c32e5a151b%3A0x90c78773874589fc!2sPo%C3%A7os%20de%20Caldas%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1741794268979!5m2!1spt-BR!2sbr"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+
+              <p class="map-footer">
+                Ponto de saída principal: região central de Poços de Caldas
+                (Praça Pedro Sanches e arredores). Consulte pelo WhatsApp para
+                combinar o local exato de embarque do seu grupo.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="section section-light section-contato">
+          <div class="container contato-grid">
+            <div>
+              <h2>Fale Conosco</h2>
+              <p>
+                Tire suas dúvidas, solicite um orçamento ou reserve o seu
+                roteiro em Poços de Caldas.
+              </p>
+
+              <ul class="contato-lista">
+                <li><strong>Telefone fixo:</strong> (35) 3014-0962</li>
+                <li><strong>WhatsApp:</strong> (35) 9 8895-1441</li>
+                <li>
+                  <strong>E-mail:</strong> contato@roteirospocosdecaldas.com.br
+                </li>
+              </ul>
+
+              <p>
+                Atendimento todos os dias, mediante agendamento. Atendemos
+                excursões, agências parceiras, grupos fechados e famílias.
+              </p>
+
+              <a
+                href="https://wa.me/5535988951441"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                💬 Chamar no WhatsApp
+              </a>
+            </div>
+
+            <div class="contato-form">
+              <h3>Enviar mensagem</h3>
+              <form>
+                <label>
+                  Nome
+                  <input type="text" placeholder="Seu nome" />
+                </label>
+
+                <label>
+                  E-mail
+                  <input type="email" placeholder="Seu melhor e-mail" />
+                </label>
+
+                <label>
+                  Telefone / WhatsApp
+                  <input type="tel" placeholder="(DDD) 9 9999-9999" />
+                </label>
+
+                <label>
+                  Mensagem
+                  <textarea
+                    rows="4"
+                    placeholder="Escreva aqui sua dúvida ou pedido de orçamento."
+                  ></textarea>
+                </label>
+
+                <button type="button" class="btn btn-outline btn-full">
+                  Enviar mensagem (configurar envio de e-mail)
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
       </main>
+
+      <!-- RODAPÉ -->
+      <footer class="footer">
+        <div class="container footer-inner">
+          <p>
+            © 2025 Roteiros Poços de Caldas – Todos os direitos reservados.
+          </p>
+          <p class="footer-extra">
+            Turismo, City Tour &amp; Experiências em Poços de Caldas – MG.
+          </p>
+        </div>
+      </footer>
     </div>
 
-    <script>
-      // ========= CLIMA AGORA (Open-Meteo) =========
-      (function () {
-        const latitude = -21.7878;
-        const longitude = -46.5608;
-
-        const url =
-          "https://api.open-meteo.com/v1/forecast" +
-          "?latitude=" +
-          latitude +
-          "&longitude=" +
-          longitude +
-          "&current_weather=true" +
-          "&timezone=auto";
-
-        const loadingEl = document.getElementById("weather-loading");
-        const contentEl = document.getElementById("weather-content");
-        const tempEl = document.getElementById("weather-temp");
-        const descEl = document.getElementById("weather-desc");
-        const extraEl = document.getElementById("weather-extra");
-        const updatedEl = document.getElementById("weather-updated");
-
-        function weatherCodeToText(code) {
-          if (code === 0) return "Céu limpo";
-          if (code === 1) return "Poucas nuvens";
-          if (code === 2) return "Parcialmente nublado";
-          if (code === 3) return "Nublado";
-          if (code === 45 || code === 48) return "Nevoeiro";
-          if (code === 51 || code === 53 || code === 55) return "Garoa";
-          if (code === 56 || code === 57) return "Garoa congelante";
-          if (code === 61 || code === 63 || code === 65) return "Chuva";
-          if (code === 66 || code === 67) return "Chuva congelante";
-          if (code === 71 || code === 73 || code === 75) return "Neve";
-          if (code === 77) return "Grãos de neve";
-          if (code === 80 || code === 81 || code === 82)
-            return "Pancadas de chuva";
-          if (code === 85 || code === 86) return "Pancadas de neve";
-          if (code === 95) return "Trovoadas";
-          if (code === 96 || code === 99) return "Trovoadas com granizo";
-          return "Condição variável";
-        }
-
-        fetch(url)
-          .then((response) => response.json())
-          .then((data) => {
-            if (!data || !data.current_weather) {
-              throw new Error("Sem dados de clima");
-            }
-
-            const c = data.current_weather;
-
-            loadingEl.style.display = "none";
-            contentEl.style.display = "block";
-
-            const temp = Math.round(c.temperature);
-            tempEl.innerHTML = temp + "<small>°C</small>";
-            descEl.textContent = weatherCodeToText(c.weathercode);
-
-            const wind = Math.round(c.windspeed);
-            const dir = c.winddirection;
-            const time = new Date(c.time);
-
-            extraEl.innerHTML = "";
-            extraEl.insertAdjacentHTML(
-              "beforeend",
-              "<span>Vento: " + wind + " km/h</span>"
-            );
-            extraEl.insertAdjacentHTML(
-              "beforeend",
-              "<span>Direção: " + Math.round(dir) + "°</span>"
-            );
-
-            updatedEl.textContent =
-              "Última atualização: " +
-              time.toLocaleString("pt-BR", {
-                day: "2-digit",
-                month: "2-digit",
-                hour: "2-digit",
-                minute: "2-digit",
-              }) +
-              " · Fonte: Open-Meteo";
-          })
-          .catch(function () {
-            loadingEl.textContent =
-              "Não foi possível carregar o clima agora. Tente novamente mais tarde.";
-          });
-      })();
-    </script>
+    <!-- BARRA DE COOKIES -->
+    <div class="cookie-banner" id="cookie-banner">
+      <p>
+        Usamos cookies para melhorar sua experiência neste site. Ao continuar
+        navegando, você concorda com nossa política de cookies.
+      </p>
+      <div class="cookie-actions">
+        <button class="btn-cookie btn-outline" id="cookie-config">
+          Configurar
+        </button>
+        <button class="btn-cookie btn-primary" id="cookie-accept">
+          Aceitar
+        </button>
+      </div>
+    </div>
   </body>
 </html>
