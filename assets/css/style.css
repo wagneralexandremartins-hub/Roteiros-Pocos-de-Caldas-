@@ -15,19 +15,28 @@ body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   color: #0b1f33;
+
+  /* Imagem de fundo (Palace) */
   background-image: url("../img/vista-area-praca-pedro-sanches.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* CAMADA SOBRE O FUNDO */
+/* ============================================================
+   CAMADA SOBRE O FUNDO  ✅ (ALTERADO PARA DEIXAR O PALACE VISÍVEL)
+   Antes estava muito escuro: 0.76 e 0.88
+   Agora fica mais “marca d’água”, sem perder legibilidade
+   ============================================================ */
 .page-overlay {
   min-height: 100vh;
+
+  /* mais claro e com leve “luz” no topo (combina com céu/prédio claros) */
   background: linear-gradient(
     180deg,
-    rgba(15, 23, 42, 0.76),
-    rgba(15, 23, 42, 0.88)
+    rgba(255, 255, 255, 0.10) 0%,
+    rgba(15, 23, 42, 0.52) 38%,
+    rgba(15, 23, 42, 0.62) 100%
   );
 }
 
@@ -587,54 +596,54 @@ body {
 
 /* ===== COOKIE BANNER ===== */
 .cookie-banner {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(15, 23, 42, 0.92);
-    color: #e5e7eb;
-    padding: 12px 20px;
-    font-size: 14px;
-    display: none; /* Começa oculto */
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    z-index: 999;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.92);
+  color: #e5e7eb;
+  padding: 12px 20px;
+  font-size: 14px;
+  display: none; /* Começa oculto */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 999;
 }
 
 /* Quando ativado pelo JS */
 .cookie-banner.active {
-    display: flex;
+  display: flex;
 }
 
 .cookie-banner p {
-    flex: 1;
+  flex: 1;
 }
 
 .btn-cookie {
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    border: 1px solid rgba(255,255,255,0.25);
-    background: transparent;
-    color: #e5e7eb;
-    transition: 0.2s;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #e5e7eb;
+  transition: 0.2s;
 }
 
 .btn-cookie:hover {
-    background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .btn-cookie.btn-primary {
-    background: #10b981;
-    border: none;
-    color: #fff;
+  background: #10b981;
+  border: none;
+  color: #fff;
 }
 
 .btn-cookie.btn-primary:hover {
-    background: #0e9f6e;
+  background: #0e9f6e;
 }
 
 /* RESPONSIVO */
