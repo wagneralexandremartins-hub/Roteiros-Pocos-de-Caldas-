@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Roteiros Poços de Caldas – City Tour, Passeios & Experiências</title>
+    <title>Roteiros Poços de Caldas – Guiamento Turístico & Experiências</title>
 
     <meta
       name="description"
-      content="Roteiros Poços de Caldas – City tour, teleférico, Cristo Redentor, mirantes, recanto japonês, cascata Véu das Noivas e experiências completas com guia especializado."
+      content="Guiamento turístico especializado em Poços de Caldas com acompanhamento profissional, explicações históricas e culturais, mirantes, praças e experiências com roteiro flexível."
     />
     <meta
       name="keywords"
-      content="roteiros poços de caldas, city tour poços de caldas, palace hotel, cristo redentor poços, teleférico poços de caldas, recanto japonês, véu das noivas, turismo em poços"
+      content="roteiros poços de caldas, guiamento turístico poços de caldas, guia especializado poços, cristo redentor poços, mirantes poços de caldas, recanto japonês, turismo em poços"
     />
     <meta name="author" content="Roteiros Poços de Caldas" />
+    <meta name="robots" content="index, follow" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,7 +25,37 @@
     />
 
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="script.js" defer></script>
+
+    <!-- Ajustes locais: Banner (Palace) no HERO + overlay leve -->
+    <style>
+      /* HERO como banner de entrada com Palace ao fundo */
+      .hero {
+        position: relative;
+        background-image: url("assets/img/palace-banner.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      /* Substitui a "frente black" pesada por overlay mais suave */
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        pointer-events: none;
+      }
+
+      /* Garante que o conteúdo fique acima do overlay */
+      .hero .container,
+      .hero .hero-inner {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+
+    <!-- Use apenas um JS (o do assets) -->
+    <script src="assets/script.js" defer></script>
   </head>
 
   <body>
@@ -46,7 +77,7 @@
             <div class="logo-icon">PC</div>
             <div class="logo-text">
               <strong>Roteiros Poços de Caldas</strong>
-              <span>Turismo, City Tour &amp; Experiências</span>
+              <span>Guiamento Turístico &amp; Experiências</span>
             </div>
           </div>
 
@@ -59,14 +90,12 @@
             <a href="#contato" class="nav-link">Contato</a>
           </nav>
 
-          <button class="nav-toggle" aria-label="Abrir menu">
-            ☰
-          </button>
+          <button class="nav-toggle" aria-label="Abrir menu">☰</button>
         </div>
       </header>
 
       <main>
-        <!-- HERO -->
+        <!-- HERO (com Palace como banner de fundo) -->
         <section id="inicio" class="hero">
           <div class="container hero-inner">
             <div class="hero-text">
@@ -75,68 +104,102 @@
                 Roteiros Poços de Caldas
               </p>
 
-              <h1>Conheça Poços de Caldas com quem entende de roteiro</h1>
+              <h1>Conheça Poços de Caldas com guiamento especializado</h1>
 
               <p class="hero-subtitle">
-                City tour, teleférico, Cristo Redentor, mirantes, recantos e
-                experiências completas, com guia especializado e aquele
+                Acompanhamento profissional com explicações históricas e culturais,
+                paradas para fotos e orientação durante o percurso — com aquele
                 atendimento mineiro de verdade.
               </p>
 
               <ul class="hero-badges">
                 <li>Roteiros para 1 dia, fim de semana ou feriados prolongados</li>
                 <li>Atendimento para grupos, famílias e terceira idade</li>
-                <li>Guias experientes e roteiros flexíveis</li>
+                <li>Guiamento flexível conforme o perfil do grupo</li>
               </ul>
 
               <div class="hero-actions">
                 <a
-                  href="https://wa.me/5535988951441?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20os%20roteiros%20em%20Po%C3%A7os%20de%20Caldas."
+                  href="https://wa.me/5535988951441?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20guiamento%20tur%C3%ADstico%20em%20Po%C3%A7os%20de%20Caldas."
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn btn-primary"
                 >
                   💬 Reservar pelo WhatsApp
                 </a>
-                <a href="#roteiros" class="btn btn-outline">
-                  Ver roteiros disponíveis
-                </a>
+                <a href="#roteiros" class="btn btn-outline">Ver opções</a>
               </div>
 
               <p class="hero-note">
-                Saídas a partir da região central de Poços de Caldas, com
-                horários combinados conforme o seu grupo.
+                Saídas a partir da região central de Poços de Caldas, com horários
+                combinados conforme o seu grupo.
               </p>
             </div>
-            <aside class="hero-card">
-  <h2>City Tour Clássico</h2>
-  <p>
-    Cristo Redentor, Praça Pedro Sanches, Recanto Japonês, mirantes e outros
-    cartões-postais em um roteiro completo pelos principais pontos de
-    Poços de Caldas.
-  </p>
-  <ul>
-    <li>Duração média: 3 a 4 horas</li>
-    <li>Paradas para fotos, mirantes e contemplação</li>
-    <li>Explicações históricas, curiosidades e dicas locais</li>
-    <li>Teleférico: opcional, com ingresso adquirido à parte</li>
-  </ul>
-  <a
-    href="https://wa.me/5535988951441?text=Quero+informações+sobre+o+City+Tour+Clássico"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="btn btn-secondary btn-full"
-  >
-    Quero este roteiro
-  </a>
-  <p class="hero-card-note">
-    Ideal para quem está vindo pela primeira vez ou quer revisitar
-    os principais pontos de Poços de Caldas. Atrações com ingresso
-    próprio não estão inclusas no valor do passeio.
-  </p>
-</aside>
 
+            <!-- HERO CARD (substitui City Tour Clássico) -->
+            <aside class="hero-card">
+              <h2>Guiamento Turístico Especializado</h2>
+              <p>
+                Acompanhamento com guia especializado para conhecer Poços de Caldas
+                com explicações históricas, culturais e orientações locais, com
+                paradas para fotos e contemplação nos principais pontos da cidade.
+              </p>
+              <ul>
+                <li>Duração média: 3 a 4 horas</li>
+                <li>Paradas para fotos, mirantes e contemplação</li>
+                <li>Explicações históricas, curiosidades e dicas locais</li>
+                <li>Roteiro flexível conforme o perfil do grupo</li>
+              </ul>
+              <a
+                href="https://wa.me/5535988951441?text=Quero+informações+sobre+o+Guiamento+Turístico+em+Poços+de+Caldas"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary btn-full"
+              >
+                Quero informações
+              </a>
+              <p class="hero-card-note">
+                Alguns atrativos possuem administração própria. O serviço de
+                guiamento não inclui ingressos ou acesso interno a locais pagos,
+                quando aplicável.
+              </p>
             </aside>
+          </div>
+        </section>
+
+        <!-- (Opcional) Faixa logo abaixo do banner com imagens / destaques rápidos -->
+        <section class="section section-light" aria-label="Destaques rápidos">
+          <div class="container">
+            <h2>Alguns cenários do seu guiamento</h2>
+            <p class="section-subtitle">
+              Locais e paisagens que fazem parte da experiência em Poços de Caldas.
+            </p>
+
+            <div class="galeria-grid">
+              <figure class="galeria-item">
+                <img
+                  src="assets/img/palace-hotel-pocos.jpg"
+                  alt="Palace Hotel em Poços de Caldas"
+                />
+                <figcaption>Palace Hotel (referência histórica)</figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <img
+                  src="assets/img/praca-pedro-sanches.jpg"
+                  alt="Praça Pedro Sanches em Poços de Caldas"
+                />
+                <figcaption>Praça Pedro Sanches</figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <img
+                  src="assets/img/parque-do-cristo-mirante-pocos-de-caldas.jpg"
+                  alt="Cristo Redentor e mirante em Poços de Caldas"
+                />
+                <figcaption>Cristo Redentor &amp; Mirante</figcaption>
+              </figure>
+            </div>
           </div>
         </section>
 
@@ -146,29 +209,27 @@
             <div>
               <h2>Sobre os Roteiros Poços de Caldas</h2>
               <p>
-                Nosso objetivo é que você conheça Poços de Caldas com
-                tranquilidade, segurança e encantamento. Os roteiros são
-                planejados para aproveitar bem o tempo, com paradas para fotos,
-                contemplação e momentos especiais.
+                Nosso objetivo é que você conheça Poços de Caldas com tranquilidade,
+                segurança e encantamento. O guiamento é planejado para aproveitar
+                bem o tempo, com paradas para fotos, contemplação e momentos especiais.
               </p>
               <p>
                 Atendemos grupos de excursão, famílias, casais e terceira idade,
-                com opções de passeios de meio período, dia completo e roteiros
-                personalizados conforme o perfil do grupo.
+                com opções de meio período, dia completo e roteiros personalizados
+                conforme o perfil do grupo.
               </p>
               <p>
-                Trabalhamos com guias experientes, veículos parceiros e
-                roteiros flexíveis, sempre ajustando o passeio às condições do
-                dia e ao interesse dos visitantes.
+                Trabalhamos com guias experientes e roteiros flexíveis, ajustando
+                o percurso às condições do dia e ao interesse dos visitantes.
               </p>
             </div>
 
             <div class="sobre-destaques">
-              <h3>Por que escolher nossos roteiros?</h3>
+              <h3>Por que escolher nosso guiamento?</h3>
               <ul>
                 <li>✔ Conhecimento local e atenção aos detalhes.</li>
-                <li>✔ Roteiros pensados para fotografia e contemplação.</li>
-                <li>✔ Sugestões de restaurantes, cafés e pontos de apoio.</li>
+                <li>✔ Interpretação histórica e cultural do percurso.</li>
+                <li>✔ Sugestões de cafés, restaurantes e pontos de apoio.</li>
                 <li>✔ Cuidado especial com grupos da melhor idade.</li>
               </ul>
             </div>
@@ -178,31 +239,30 @@
         <!-- ROTEIROS EM DESTAQUE -->
         <section id="roteiros" class="section section-translucid">
           <div class="container">
-            <h2>Roteiros em Destaque</h2>
+            <h2>Opções em Destaque</h2>
             <p class="section-subtitle">
-              Alguns dos roteiros mais procurados em Poços de Caldas. Entre em
-              contato para adaptar ao seu grupo.
+              Algumas opções muito procuradas em Poços de Caldas. Fale conosco para
+              adaptar ao seu grupo.
             </p>
 
             <div class="roteiros-grid">
-              <!-- CARD 1 -->
+              <!-- CARD 1 (substitui City Tour Clássico) -->
               <article class="roteiro-card">
-                <h3>City Tour Clássico</h3>
+                <h3>Guiamento Turístico Especializado</h3>
                 <p class="roteiro-local">
-                  Praça Pedro Sanches, Teleférico &amp; Cristo Redentor
+                  Centro histórico, mirantes, praças e pontos culturais
                 </p>
                 <p>
-                  Passeio completo pelos principais cartões-postais do centro de
-                  Poços de Caldas, com subida de teleférico e visita ao Cristo
-                  Redentor.
+                  Acompanhamento com guia especializado, com explicações históricas e
+                  culturais, paradas para fotos e orientação durante o percurso.
                 </p>
                 <ul>
                   <li>Duração: 3 a 4 horas</li>
                   <li>Nível de esforço: leve</li>
-                  <li>Ideal para famílias, casais e terceira idade</li>
+                  <li>Ideal para famílias, grupos e terceira idade</li>
                 </ul>
                 <a
-                  href="https://wa.me/5535988951441?text=Tenho+interesse+no+City+Tour+Clássico"
+                  href="https://wa.me/5535988951441?text=Tenho+interesse+no+Guiamento+Turístico+Especializado+em+Poços+de+Caldas"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn btn-primary btn-full"
@@ -269,8 +329,7 @@
           <div class="container">
             <h2>Galeria de Imagens</h2>
             <p class="section-subtitle">
-              Um pouco dos cenários que você vai conhecer nos roteiros em
-              Poços de Caldas.
+              Um pouco dos cenários que você vai conhecer em Poços de Caldas.
             </p>
 
             <div class="galeria-grid">
@@ -293,9 +352,9 @@
               <figure class="galeria-item">
                 <img
                   src="assets/img/teleferico-pocos-de-caldas-vista-aerea.jpg"
-                  alt="Vista aérea de Poços de Caldas pelo teleférico"
+                  alt="Vista aérea de Poços de Caldas"
                 />
-                <figcaption>Teleférico – Vista da cidade</figcaption>
+                <figcaption>Vista da cidade</figcaption>
               </figure>
 
               <figure class="galeria-item">
@@ -361,8 +420,7 @@
             <article class="info-box">
               <h2>Onde estamos</h2>
               <p class="section-subtitle">
-                Poços de Caldas – MG · Região central e principais pontos
-                turísticos.
+                Poços de Caldas – MG · Região central e principais pontos turísticos.
               </p>
 
               <div class="mapa-wrapper">
@@ -377,98 +435,102 @@
               <p class="map-footer">
                 Ponto de saída principal: região central de Poços de Caldas
                 (Praça Pedro Sanches e arredores). Consulte pelo WhatsApp para
-                combinar o local exato de embarque do seu grupo.
+                combinar o local exato de encontro do seu grupo.
               </p>
             </article>
           </div>
-      
         </section>
-    <section id="depoimentos" class="section section-light">
-    <div class="container">
-    <h2>Depoimentos</h2>
-    <p class="section-subtitle">
-      Avaliações reais de quem visitou Poços de Caldas com a Agência Paulo Rogério Tur.
-    </p>
 
-    <div class="testimonials-grid">
-      <article class="testimonial">
-        <div class="testimonial-head">
-          <div>
-            <strong>Maria S.</strong>
-            <div class="testimonial-meta">São Paulo • City Tour</div>
+        <!-- DEPOIMENTOS -->
+        <section id="depoimentos" class="section section-light">
+          <div class="container">
+            <h2>Depoimentos</h2>
+            <p class="section-subtitle">
+              Avaliações reais de quem visitou Poços de Caldas com guiamento especializado.
+            </p>
+
+            <div class="testimonials-grid">
+              <article class="testimonial">
+                <div class="testimonial-head">
+                  <div>
+                    <strong>Maria S.</strong>
+                    <div class="testimonial-meta">São Paulo • Passeio</div>
+                  </div>
+                  <div class="stars" aria-label="5 estrelas">★★★★★</div>
+                </div>
+                <p>
+                  “Passeio maravilhoso! Explicações claras e muita atenção. A cidade
+                  é linda e o roteiro foi perfeito. Recomendo demais!”
+                </p>
+              </article>
+
+              <article class="testimonial">
+                <div class="testimonial-head">
+                  <div>
+                    <strong>João P.</strong>
+                    <div class="testimonial-meta">Campinas • Excursão</div>
+                  </div>
+                  <div class="stars" aria-label="5 estrelas">★★★★★</div>
+                </div>
+                <p>
+                  “Organização impecável. Segurança e pontualidade. Foi nossa primeira vez
+                  em Poços e já queremos voltar!”
+                </p>
+              </article>
+
+              <article class="testimonial">
+                <div class="testimonial-head">
+                  <div>
+                    <strong>Ana L.</strong>
+                    <div class="testimonial-meta">Belo Horizonte • Família</div>
+                  </div>
+                  <div class="stars" aria-label="5 estrelas">★★★★★</div>
+                </div>
+                <p>
+                  “Atendimento excelente do começo ao fim. Roteiro bem pensado e dicas que
+                  fizeram a viagem render muito. Nota 10!”
+                </p>
+              </article>
+            </div>
+
+            <div class="testimonial-cta">
+              <a
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener"
+                href="https://wa.me/5535988951441?text=Olá!%20Quero%20deixar%20um%20depoimento%20sobre%20o%20guiamento%20em%20Poços%20de%20Caldas."
+              >
+                Quero deixar meu depoimento
+              </a>
+
+              <a
+                class="btn btn-outline"
+                target="_blank"
+                rel="noopener"
+                href="https://www.google.com/search?q=Roteiros+Poços+de+Caldas+avaliações"
+              >
+                Ver avaliações no Google
+              </a>
+            </div>
           </div>
-          <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        </div>
-        <p>
-          “Passeio maravilhoso! O Paulo explicou tudo com muita calma e atenção.
-          A cidade é linda e o roteiro foi perfeito. Recomendo demais!”
-        </p>
-      </article>
-
-      <article class="testimonial">
-        <div class="testimonial-head">
-          <div>
-            <strong>João P.</strong>
-            <div class="testimonial-meta">Campinas • Excursão</div>
-          </div>
-          <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        </div>
-        <p>
-          “Organização impecável. Segurança e pontualidade. Foi nossa primeira vez
-          em Poços e já queremos voltar com a agência!”
-        </p>
-      </article>
-
-      <article class="testimonial">
-        <div class="testimonial-head">
-          <div>
-            <strong>Ana L.</strong>
-            <div class="testimonial-meta">Belo Horizonte • Família</div>
-          </div>
-          <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        </div>
-        <p>
-          “Atendimento excelente do começo ao fim. Roteiro bem pensado e dicas que
-          fizeram a viagem render muito. Nota 10!”
-        </p>
-          </article>
-          </div>
-
-          <div class="testimonial-cta">
-         <a class="btn btn-primary" target="_blank" rel="noopener"
-         href="https://wa.me/5535988951441?text=Olá!%20Quero%20deixar%20um%20depoimento%20sobre%20a%20Agência%20Paulo%20Rogério%20Tur.">
-        Quero deixar meu depoimento
-        </a>
-
-        <a class="btn btn-outline" target="_blank" rel="noopener"
-         href="https://www.google.com/search?q=Agência+Paulo+Rogério+Tur+Poços+de+Caldas+avaliações">
-            Ver avaliações no Google
-      </a>
-      </div>
-      </div>
-      </section>
+        </section>
 
         <!-- CONTATO -->
         <section id="contato" class="section section-light section-contato">
           <div class="container contato-grid">
             <div>
               <h2>Fale Conosco</h2>
-              <p>
-                Tire suas dúvidas, solicite um orçamento ou reserve o seu
-                roteiro em Poços de Caldas.
-              </p>
+              <p>Tire suas dúvidas, solicite um orçamento ou reserve seu guiamento.</p>
 
               <ul class="contato-lista">
                 <li><strong>Telefone fixo:</strong> (35) 3014-0962</li>
                 <li><strong>WhatsApp:</strong> (35) 9 8895-1441</li>
-                <li>
-                  <strong>E-mail:</strong> contato@roteirospocosdecaldas.com.br
-                </li>
+                <li><strong>E-mail:</strong> contato@roteirospocosdecaldas.com.br</li>
               </ul>
 
               <p>
-                Atendimento todos os dias, mediante agendamento. Atendemos
-                excursões, agências parceiras, grupos fechados e famílias.
+                Atendimento todos os dias, mediante agendamento. Atendemos excursões,
+                grupos fechados e famílias.
               </p>
 
               <a
@@ -519,31 +581,25 @@
       <!-- RODAPÉ -->
       <footer class="footer">
         <div class="container footer-inner">
-          <p>
-            © 2025 Roteiros Poços de Caldas – Todos os direitos reservados.
-          </p>
+          <p>© 2025 Roteiros Poços de Caldas – Todos os direitos reservados.</p>
           <p class="footer-extra">
-            Turismo, City Tour &amp; Experiências em Poços de Caldas – MG.
+            Guiamento Turístico &amp; Experiências em Poços de Caldas – MG.
           </p>
         </div>
       </footer>
     </div>
 
-        <!-- BARRA DE COOKIES -->
+    <!-- BARRA DE COOKIES -->
     <div class="cookie-banner" id="cookie-banner">
-    <p>
-        Usamos cookies para melhorar sua experiência neste site. Ao continuar navegando, você concorda com nossa política de cookies.
-    </p>
+      <p>
+        Usamos cookies para melhorar sua experiência neste site. Ao continuar navegando,
+        você concorda com nossa política de cookies.
+      </p>
 
-    <div class="cookie-actions">
+      <div class="cookie-actions">
         <button class="btn-cookie btn-outline" id="cookie-config">Configurar</button>
         <button class="btn-cookie btn-primary" id="cookie-accept">Aceitar</button>
+      </div>
     </div>
-</div>
-
-<!-- carregar script principal -->
-<script src="assets/script.js"></script>
-
-</body>
+  </body>
 </html>
-
