@@ -799,7 +799,18 @@ body {
   margin-top: 10px;
   font-weight: 600;
   font-size: 0.95rem;
-}
-}  
+} 
 
+  .video-card video{
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  max-height: 360px;   /* ✅ diminui aqui */
+  background: #000;
+}
+
+}  
+}
 
