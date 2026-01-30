@@ -765,6 +765,41 @@ body {
   .testimonials-grid {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .videos-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
+
+.video-card{
+  margin: 0;
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  overflow: hidden;
+}
+
+.video-card video{
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+
+  /* padrão ideal para vídeos verticais */
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+
+  /* não deixa ficar gigante */
+  max-height: 460px;
+  background: #000;
+}
+
+.video-card figcaption{
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+}  
 
 
