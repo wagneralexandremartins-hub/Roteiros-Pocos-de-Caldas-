@@ -362,7 +362,7 @@ h3 { font-size: 1.2rem; }
 }
 .galeria-item:hover figcaption { opacity: 1; }
 
-.videos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.videos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .video-card { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow); }
 .video-card video { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
 .video-card figcaption {
