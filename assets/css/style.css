@@ -405,6 +405,37 @@ h3 { font-size: 1.2rem; }
 .testimonials-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 /* ============================================================
+   GUIA PARCEIRO
+   ============================================================ */
+.parceiros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+  gap: 24px;
+}
+.parceiro-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-200);
+  transition: all var(--ease);
+}
+.parceiro-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.parceiro-video { background: var(--green-dark); }
+.parceiro-video video {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  display: block;
+}
+.parceiro-body { padding: 20px 22px; text-align: center; }
+.parceiro-body h3 { font-size: 1.15rem; color: var(--green); margin-bottom: 4px; }
+.parceiro-role {
+  font-size: .78rem; color: var(--gold-dark); font-weight: 600;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+
+/* ============================================================
    CLIMA + MAPA
    ============================================================ */
 .clima-mapa-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 52px; align-items: start; }
@@ -597,6 +628,7 @@ h3 { font-size: 1.2rem; }
   .features-grid { grid-template-columns: 1fr; }
   .grupos-grid  { grid-template-columns: 1fr 1fr; }
   .galeria-grid { grid-template-columns: 1fr 1fr; }
+  .parceiros-grid { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; }
   .cta-actions  { flex-direction: column; align-items: center; }
   .contato-form { padding: 24px 18px; }
